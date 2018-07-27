@@ -19,7 +19,7 @@ public class MainMenuFunctions : MonoBehaviour {
 	public void ButtonSound(){if(Sounds){ButtonSoundSource.Play ();}}
 
 	public void ChangeCamera(int IdToActive){//Метод, меняющий камеру
-		for(int i = 0; i < 3; i++){//Перечисление переменных с массива
+		for(int i = 0; i < 4; i++){//Перечисление переменных с массива
 			if (i != IdToActive){//Все переменные массива кроме одной
 				Cameras[i].enabled = false;
 				Canvases[i].enabled = false;
