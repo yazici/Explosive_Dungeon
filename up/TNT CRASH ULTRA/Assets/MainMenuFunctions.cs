@@ -21,7 +21,7 @@ public class MainMenuFunctions : MonoBehaviour {
     public int[] StatsCounts;
     
 	public void ButtonSound(){if(Sounds){ButtonSoundSource.Play ();}}
-    public void PlayButton() {StatsCounts[0]++; PlayerPrefs.SetInt("Games", StatsCounts[0]);}
+    public void StartButton() {StatsCounts[0]++; PlayerPrefs.SetInt("Games", StatsCounts[0]); Application.LoadLevel(1); }
     public void SetStats() {
         Stats[0].text = "Games: " + StatsCounts[0];
         Stats[1].text = "Diamonds collected: " + StatsCounts[1];
@@ -37,7 +37,7 @@ public class MainMenuFunctions : MonoBehaviour {
         if (PlayerPrefs.HasKey("Games")) { StatsCounts[0] = PlayerPrefs.GetInt("Games"); }
     }
     public void ChangeCamera(int IdToActive){//Метод, меняющий камеру
-		for(int i = 0; i < 4; i++){//Перечисление переменных с массива
+		for(int i = 0; i < 5; i++){//Перечисление переменных с массива
 			if (i != IdToActive){//Все переменные массива кроме одной
 				Cameras[i].enabled = false;
 				Canvases[i].enabled = false;
