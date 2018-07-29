@@ -4,10 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class MainMenuFunctions : MonoBehaviour {
 
-	[Header("Канвасы и смена камеры")]
-	public Canvas[] Canvases; //Массив всех канвасов из меню
-	public Camera[] Cameras;//Массив всех камер из меню
-
+    [Header("Канвасы и смена камеры")]
+    public GameObject[] Cameras;
 	[Header("Настройки")]
 	public AudioSource MainMenuSource;
 	public AudioSource ButtonSoundSource;
@@ -39,12 +37,10 @@ public class MainMenuFunctions : MonoBehaviour {
     public void ChangeCamera(int IdToActive){//Метод, меняющий камеру
 		for(int i = 0; i < 5; i++){//Перечисление переменных с массива
 			if (i != IdToActive){//Все переменные массива кроме одной
-				Cameras[i].enabled = false;
-				Canvases[i].enabled = false;
+				Cameras[i].SetActive(false);
 			}
 		}
-		Cameras [IdToActive].enabled = true;//Камера активна
-		Canvases [IdToActive].enabled = true;//Канвас активен
+		Cameras [IdToActive].SetActive(true);//Камера активна
 	}
 
 	public void TwitterUp(){
