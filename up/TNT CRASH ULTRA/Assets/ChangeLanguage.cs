@@ -54,11 +54,15 @@ public class ChangeLanguage : MonoBehaviour
     }
     public void switchButton()
     {
-        if (langIndex != langArray.Length) langIndex++;
-       // else langIndex = 1;
-        PlayerPrefs.SetString("Language", langArray[langIndex - 1]);
-        LangLoad();
+        switch (PlayerPrefs.GetString("Language")) {
+            case "en_US": PlayerPrefs.SetString("Language", "ru_RU"); break;
+            case "ru_RU": PlayerPrefs.SetString("Language", "ua_UA"); break;
+            case "ua_UA": PlayerPrefs.SetString("Language", "en_US"); break;
+        }
+        //if (langIndex != langArray.Length) langIndex++;
+        //else langIndex = 1;
         Debug.Log(PlayerPrefs.GetString("Language"));
+        LangLoad();
         LoadLanguageFull();
     }
 

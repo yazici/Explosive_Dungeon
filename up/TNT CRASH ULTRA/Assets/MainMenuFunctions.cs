@@ -111,9 +111,9 @@ public class MainMenuFunctions : MonoBehaviour {
         {
             switch (PlayerPrefs.GetString("Language"))
             {
-                case "en_US": MusicText.text = "Music: on"; break;
-                case "ru_RU": MusicText.text = "Музыка: on"; break;
-                case "ua_UA": MusicText.text = "Музика: on"; break;
+                case "en_US": MusicText.text = "Music: off"; break;
+                case "ru_RU": MusicText.text = "Музыка: off"; break;
+                case "ua_UA": MusicText.text = "Музика: off"; break;
             }
         }
     }
