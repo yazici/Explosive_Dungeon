@@ -1207,6 +1207,7 @@ GameObject:
   - component: {fileID: 867739167}
   - component: {fileID: 867739166}
   - component: {fileID: 867739169}
+  - component: {fileID: 867739170}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1304,6 +1305,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f6aeac7f9366d2438654033b1ff473f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &867739170
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 867739164}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8acb323fe31f0a34e87890aeade82b17, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &954818694
 GameObject:
   m_ObjectHideFlags: 0
@@ -2412,7 +2431,7 @@ BoxCollider2D:
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_AutoTiling: 1
   serializedVersion: 2
   m_Size: {x: 0.17, y: 0.21}
   m_EdgeRadius: 0
