@@ -15,7 +15,7 @@ public class TNT : MonoBehaviour {
         yield return new WaitForSeconds(1.0f);
         Spawner.position = new Vector2(Random.Range(-8.0f, 8.0f), Spawner.position.y);
         GameObject TnTSpawned = Instantiate(TNTprefab, Spawner.transform.position, Quaternion.identity) as GameObject;
-        yield return new WaitForSeconds(5.6f);;
+        yield return new WaitForSeconds(2.8f);
         if (inTrigger) { Debug.Log("ти сдох сучек"); } else { Debug.Log("ахуит как ти вижил падаль тнт форевер"); }
         Destroy(TnTSpawned);
 
