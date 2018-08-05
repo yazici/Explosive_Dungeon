@@ -65,9 +65,9 @@ public class MainMenuFunctions : MonoBehaviour {
 			ButtonSoundSource.Play ();
             switch (PlayerPrefs.GetString("Language"))
             {
-                case "en_US": SoundsText.text = "Sounds: off"; break;
-                case "ru_RU": SoundsText.text = "Звуки: off"; break;
-                case "ua_UA": SoundsText.text = "Звуки: off"; break;
+                case "en_US": SoundsText.text = "SOUNDS: OFF"; break;
+                case "ru_RU": SoundsText.text = "ЗВУКИ: НЕТ"; break;
+                case "ua_UA": SoundsText.text = "ЗВУКИ: НI"; break;
             }
 
 		} else {
@@ -75,9 +75,9 @@ public class MainMenuFunctions : MonoBehaviour {
 			ButtonSoundSource.Play ();
             switch (PlayerPrefs.GetString("Language"))
             {
-                case "en_US": SoundsText.text = "Sounds: on"; break;
-                case "ru_RU": SoundsText.text = "Звуки: on"; break;
-                case "ua_UA": SoundsText.text = "Звуки: on"; break;
+                case "en_US": SoundsText.text = "Sounds: ON"; break;
+                case "ru_RU": SoundsText.text = "ЗВУКИ: ДА"; break;
+                case "ua_UA": SoundsText.text = "ЗВУКИ: ТАК"; break;
             }
         }
 	}
@@ -86,34 +86,34 @@ public class MainMenuFunctions : MonoBehaviour {
         if (Sounds) {
             switch (PlayerPrefs.GetString("Language"))
             {
-                case "en_US": SoundsText.text = "Sounds: on"; break;
-                case "ru_RU": SoundsText.text = "Звуки: on"; break;
-                case "ua_UA": SoundsText.text = "Звуки: on"; break;
+                case "en_US": SoundsText.text = "SOUNDS: ON"; break;
+                case "ru_RU": SoundsText.text = "ЗВУКИ: ДА"; break;
+                case "ua_UA": SoundsText.text = "ЗВУКИ: ТАК"; break;
             }
         } else {
             switch (PlayerPrefs.GetString("Language"))
             {
-                case "en_US": SoundsText.text = "Sounds: off"; break;
-                case "ru_RU": SoundsText.text = "Звуки: off"; break;
-                case "ua_UA": SoundsText.text = "Звуки: off"; break;
+                case "en_US": SoundsText.text = "SOUNDS: OFF"; break;
+                case "ru_RU": SoundsText.text = "ЗВУКИ: НЕТ"; break;
+                case "ua_UA": SoundsText.text = "ЗВУКИ: НI"; break;
             }
         }
         if (Music)
         {
             switch (PlayerPrefs.GetString("Language"))
             {
-                case "en_US": MusicText.text = "Music: on"; break;
-                case "ru_RU": MusicText.text = "Музыка: on"; break;
-                case "ua_UA": MusicText.text = "Музика: on"; break;
+                case "en_US": MusicText.text = "MUSIC: ON"; break;
+                case "ru_RU": MusicText.text = "МУЗЫКА: ДА"; break;
+                case "ua_UA": MusicText.text = "МУЗИКА: ТАК"; break;
             }
         }
         else
         {
             switch (PlayerPrefs.GetString("Language"))
             {
-                case "en_US": MusicText.text = "Music: off"; break;
-                case "ru_RU": MusicText.text = "Музыка: off"; break;
-                case "ua_UA": MusicText.text = "Музика: off"; break;
+                case "en_US": MusicText.text = "MUSIC: OFF"; break;
+                case "ru_RU": MusicText.text = "МУЗЫКА: НЕТ"; break;
+                case "ua_UA": MusicText.text = "МУЗИКА: НI"; break;
             }
         }
     }
@@ -123,9 +123,9 @@ public class MainMenuFunctions : MonoBehaviour {
 			MainMenuSource.Stop ();
             switch (PlayerPrefs.GetString("Language"))
             {
-                case "en_US": MusicText.text = "Music: off"; break;
-                case "ru_RU": MusicText.text = "Музыка: off"; break;
-                case "ua_UA": MusicText.text = "Музика: off"; break;
+                case "en_US": MusicText.text = "MUSIC: OFF"; break;
+                case "ru_RU": MusicText.text = "МУЗЫКА: НЕТ"; break;
+                case "ua_UA": MusicText.text = "МУЗИКА: НI"; break;
             }
 
         } else {
@@ -133,9 +133,9 @@ public class MainMenuFunctions : MonoBehaviour {
 			MainMenuSource.Play ();
             switch (PlayerPrefs.GetString("Language"))
             {
-                case "en_US": MusicText.text = "Music: on"; break;
-                case "ru_RU": MusicText.text = "Музыка: on"; break;
-                case "ua_UA": MusicText.text = "Музика: on"; break;
+                case "en_US": MusicText.text = "MUSIC: ON"; break;
+                case "ru_RU": MusicText.text = "МУЗЫКА: ДА"; break;
+                case "ua_UA": MusicText.text = "МУЗИКА: ТАК"; break;
             }
         }
 	}
