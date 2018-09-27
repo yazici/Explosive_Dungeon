@@ -69,5 +69,5 @@ public class ChangeLanguage : MonoBehaviour
 }
 public class lang
 {
-    public string[] Word = new string[31];
+    public string[] Word = new string[39];
 }
