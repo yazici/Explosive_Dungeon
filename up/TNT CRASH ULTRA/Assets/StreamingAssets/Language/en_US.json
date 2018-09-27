@@ -13,7 +13,7 @@
         "IDEA / ARTWORK",
         "VLADYSLAV PAVLENKO",
         "PROGRAMMING",
-        "VLADYSLAV GRAMMA / VLADYSLAV PAVLENKO",
+        "VLADISLAV GRAMMA",
         "MUSIC",
         "BACK",
         "- STATS -",
@@ -29,6 +29,14 @@
         "PLAY",
         "LEVEL\n#1",
         "LEVEL\n#2",
-        "LEVEL\n#3"
+        "LEVEL\n#3",
+        "- PAUSE -",
+        "RESUME",
+        "EXIT",
+        "- YOU DIED -",
+        "BEST SCORE: ",
+        "YOUR SCORE: ",
+        "RETRY",
+        "EXIT"
     ]
 }

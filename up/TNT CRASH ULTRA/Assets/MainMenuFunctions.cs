@@ -66,8 +66,8 @@ public class MainMenuFunctions : MonoBehaviour {
             switch (PlayerPrefs.GetString("Language"))
             {
                 case "en_US": SoundsText.text = "SOUNDS: OFF"; break;
-                case "ru_RU": SoundsText.text = "ЗВУКИ: НЕТ"; break;
-                case "ua_UA": SoundsText.text = "ЗВУКИ: НI"; break;
+                case "ru_RU": SoundsText.text = "ЗВУКИ: OFF"; break;
+                case "ua_UA": SoundsText.text = "ЗВУКИ: OFF"; break;
             }
 
 		} else {
@@ -75,9 +75,9 @@ public class MainMenuFunctions : MonoBehaviour {
 			ButtonSoundSource.Play ();
             switch (PlayerPrefs.GetString("Language"))
             {
-                case "en_US": SoundsText.text = "Sounds: ON"; break;
-                case "ru_RU": SoundsText.text = "ЗВУКИ: ДА"; break;
-                case "ua_UA": SoundsText.text = "ЗВУКИ: ТАК"; break;
+                case "en_US": SoundsText.text = "SOUNDS: ON"; break;
+                case "ru_RU": SoundsText.text = "ЗВУКИ: ON"; break;
+                case "ua_UA": SoundsText.text = "ЗВУКИ: ON"; break;
             }
         }
 	}
@@ -87,15 +87,15 @@ public class MainMenuFunctions : MonoBehaviour {
             switch (PlayerPrefs.GetString("Language"))
             {
                 case "en_US": SoundsText.text = "SOUNDS: ON"; break;
-                case "ru_RU": SoundsText.text = "ЗВУКИ: ДА"; break;
-                case "ua_UA": SoundsText.text = "ЗВУКИ: ТАК"; break;
+                case "ru_RU": SoundsText.text = "ЗВУКИ: ON"; break;
+                case "ua_UA": SoundsText.text = "ЗВУКИ: ON"; break;
             }
         } else {
             switch (PlayerPrefs.GetString("Language"))
             {
                 case "en_US": SoundsText.text = "SOUNDS: OFF"; break;
-                case "ru_RU": SoundsText.text = "ЗВУКИ: НЕТ"; break;
-                case "ua_UA": SoundsText.text = "ЗВУКИ: НI"; break;
+                case "ru_RU": SoundsText.text = "ЗВУКИ: OFF"; break;
+                case "ua_UA": SoundsText.text = "ЗВУКИ: OFF"; break;
             }
         }
         if (Music)
@@ -103,8 +103,8 @@ public class MainMenuFunctions : MonoBehaviour {
             switch (PlayerPrefs.GetString("Language"))
             {
                 case "en_US": MusicText.text = "MUSIC: ON"; break;
-                case "ru_RU": MusicText.text = "МУЗЫКА: ДА"; break;
-                case "ua_UA": MusicText.text = "МУЗИКА: ТАК"; break;
+                case "ru_RU": MusicText.text = "МУЗЫКА: ON"; break;
+                case "ua_UA": MusicText.text = "МУЗИКА: ON"; break;
             }
         }
         else
@@ -112,8 +112,8 @@ public class MainMenuFunctions : MonoBehaviour {
             switch (PlayerPrefs.GetString("Language"))
             {
                 case "en_US": MusicText.text = "MUSIC: OFF"; break;
-                case "ru_RU": MusicText.text = "МУЗЫКА: НЕТ"; break;
-                case "ua_UA": MusicText.text = "МУЗИКА: НI"; break;
+                case "ru_RU": MusicText.text = "МУЗЫКА: OFF"; break;
+                case "ua_UA": MusicText.text = "МУЗИКА: OFF"; break;
             }
         }
     }
@@ -124,8 +124,8 @@ public class MainMenuFunctions : MonoBehaviour {
             switch (PlayerPrefs.GetString("Language"))
             {
                 case "en_US": MusicText.text = "MUSIC: OFF"; break;
-                case "ru_RU": MusicText.text = "МУЗЫКА: НЕТ"; break;
-                case "ua_UA": MusicText.text = "МУЗИКА: НI"; break;
+                case "ru_RU": MusicText.text = "МУЗЫКА: OFF"; break;
+                case "ua_UA": MusicText.text = "МУЗИКА: OFF"; break;
             }
 
         } else {
