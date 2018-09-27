@@ -1,11 +1,10 @@
-﻿/*using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.IO;
 using UnityEngine.UI;
-public class LevelChooseScript : MonoBehaviour
-{
+public class LevelChooseScript : MonoBehaviour {
 
     private Save sv = new Save();
     private string path;
@@ -38,12 +37,11 @@ public class LevelChooseScript : MonoBehaviour
             sv = JsonUtility.FromJson<Save>(File.ReadAllText(path));
         }
     }
-    private void LevelBuy(int indexBuy)
-    {
+    private void LevelBuy(int indexBuy) {
         sv.buyedLevels[indexBuy] = true;
         sv.Diamonds = sv.Diamonds - pricesLevels[indexBuy];
     }
-    private void OnApplicationPause()
+    private void OnApplicationQuit()
     {
         File.WriteAllText(path, JsonUtility.ToJson(sv));
     }
@@ -55,21 +53,18 @@ public class LevelChooseScript : MonoBehaviour
             SecondLevel[0].SetActive(false);
             SecondLevel[1].SetActive(true);
         }
-        if (sv.buyedLevels[2])
-        {
+        if (sv.buyedLevels[2]) {
             ThirdLevel[0].SetActive(false);
             ThirdLevel[1].SetActive(true);
         }
     }
-    public void OnLevelChecked(int index)
-    {
-        if (sv.buyedLevels[index])
-        {
+    public void OnLevelChecked(int index) {
+        if (sv.buyedLevels[index]) {
             LevelsImages[index].sprite = BoxState[1];
             curIndex = index;
             for (int i = 0; i < LevelsImages.Length; i++)
             {
-                if (i != index)
+                if(i != index)
                 {
                     LevelsImages[i].sprite = BoxState[0];
                 }
@@ -82,8 +77,7 @@ public class LevelChooseScript : MonoBehaviour
     }
 }
 [Serializable]
-public class Savewsad
-{
+public class Save{
     public bool[] buyedLevels = { true, false, false };
     public int Diamonds = 1590;
-}*/
+   }
