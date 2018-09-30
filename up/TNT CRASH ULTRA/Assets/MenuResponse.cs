@@ -11,7 +11,7 @@ public class MenuResponse : MonoBehaviour
 
     public void ChangeScene() { SceneManager.LoadScene(1); }
 
-    public void OpenTwitter() { Application.OpenURL("https://twitter.com/8ilverStudio"); }
+    public void OpenTwitter() { Application.OpenURL("https://twitter.com/8ilver_"); }
 
     private void ChangePlay()
     {
