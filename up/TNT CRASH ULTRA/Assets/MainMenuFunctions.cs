@@ -56,7 +56,7 @@ public class MainMenuFunctions : MonoBehaviour {
 	}
 
 	public void TwitterUp(){
-		Application.OpenURL ("https://twitter.com/8ilverStudio");
+		Application.OpenURL ("https://twitter.com/8ilver_");
 	}
 
 	public void ChangeSounds (){
