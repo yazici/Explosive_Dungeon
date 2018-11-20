@@ -2,17 +2,28 @@ fileFormatVersion: 2
 guid: 5e317a28907caea40ac7243d654fccb3
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Twitter
-    21300002: Achievements
-    21300004: RemoveAds
-    21300006: Settings
-    21300008: Leaderboard
-    21300010: TwitterPressed
-    21300012: AchievementsPressed
-    21300014: RemoveAdsPressed
-    21300016: SettingsPressed
-    21300018: LeaderboardPressed
-    21300020: icons (2)_10
+    21300000: MenuButtons_0
+    21300002: MenuButtons_1
+    21300004: MenuButtons_2
+    21300006: MenuButtons_3
+    21300008: MenuButtons_4
+    21300010: MenuButtons_5
+    21300012: MenuButtons_6
+    21300014: MenuButtons_7
+    21300016: MenuButtons_8
+    21300018: MenuButtons_9
+    21300020: MenuButtons_10
+    21300022: MenuButtons_11
+    21300024: MenuButtons_12
+    21300026: MenuButtons_13
+    21300028: MenuButtons_14
+    21300030: MenuButtons_15
+    21300032: MenuButtons_16
+    21300034: MenuButtons_17
+    21300036: MenuButtons_18
+    21300038: MenuButtons_24
+    21300040: MenuButtons_25
+    21300042: MenuButtons_26
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -74,7 +85,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -85,7 +96,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -96,7 +107,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -106,201 +117,441 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Twitter
+      name: MenuButtons_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 88
-        width: 88.125
+        y: 264
+        width: 88
         height: 88
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9b9f1b887744bc478906a5fdcb60a34
+      spriteID: 71a929f1ef5f3b44b906a610ca97cb58
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Achievements
+      name: MenuButtons_1
       rect:
         serializedVersion: 2
         x: 88
-        y: 88
-        width: 88.125
+        y: 264
+        width: 88
         height: 88
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef95d060c7bc6e64397fe066ed4da499
+      spriteID: bf236fe7f2794e44da962b5b86bc0d66
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemoveAds
+      name: MenuButtons_2
       rect:
         serializedVersion: 2
         x: 176
-        y: 88
-        width: 88.125
+        y: 264
+        width: 88
         height: 88
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7abf3f53c74fbc499fabdff008f37b0
+      spriteID: d8e8625c2a1e4d449b9e7713a467f75a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Settings
+      name: MenuButtons_3
       rect:
         serializedVersion: 2
         x: 264
+        y: 264
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63cedbeea57becf4ebb5862bd3704e51
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MenuButtons_4
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 264
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49b069fc8efe21044a92537bec9f76d3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MenuButtons_5
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 264
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbcb0b944e1aec443bfba94cf536e4b5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MenuButtons_6
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 264
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6708903b1d33cdc4c99215ce4077b554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MenuButtons_7
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 264
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9f25b26301819448966fc36e02e689f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MenuButtons_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 176
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b78a7d466af193640b68b73baa4b3cb1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MenuButtons_9
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 176
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 665f38ca5c05f0d4f9a84866e40567fe
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MenuButtons_10
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 176
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13be9391b5f53e44992b16256283315a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MenuButtons_11
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 176
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 681599bcaea96f74b83bdba39c33bad0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MenuButtons_12
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 176
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4fb1f9a0947d9146847d8b6a83178dc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MenuButtons_13
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 176
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30b2e2823e86802449d623a14f0467a2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MenuButtons_14
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 176
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 253dddc8b80419d4c8c5109f93020769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MenuButtons_15
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 176
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8c4911c591ed3347b11f75bb1b09085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MenuButtons_16
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 88
         width: 88
         height: 88
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 436608f8123caf544a0ec6e2854de286
+      spriteID: dd4380c4a96439b4295d1058bac574b6
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Leaderboard
+      name: MenuButtons_17
       rect:
         serializedVersion: 2
-        x: 352
+        x: 88
         y: 88
-        width: 88.125
+        width: 88
         height: 88
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f91e574247be6c6488b3d5ae3f45070e
+      spriteID: a75423d37d2519540b0f4f05a3953539
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TwitterPressed
+      name: MenuButtons_18
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 88
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdbaf76073ca84b4dbd24d573e4bb3c8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MenuButtons_24
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 88.125
+        width: 88
         height: 88
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f4244121fa624c45b9b8aa9217ed9c7
+      spriteID: 3db1482b22e1ea145aecbe2b90cbbab9
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AchievementsPressed
+      name: MenuButtons_25
       rect:
         serializedVersion: 2
         x: 88
         y: 0
-        width: 88.125
+        width: 88
         height: 88
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5b7cb369d5d6dd4aa6863d9c5b851b7
+      spriteID: 90d9d464470a3014c90e9f8bb48a56ad
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RemoveAdsPressed
+      name: MenuButtons_26
       rect:
         serializedVersion: 2
         x: 176
         y: 0
-        width: 88.125
+        width: 88
         height: 88
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b510c8b85b47fd459065d080eea3e11
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SettingsPressed
-      rect:
-        serializedVersion: 2
-        x: 264
-        y: 0
-        width: 88.125
-        height: 88
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c366aa3fce918344d947f41989a8335e
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LeaderboardPressed
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 0
-        width: 88.125
-        height: 88
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 666148c35c9150c438423d3037a4a16f
+      spriteID: 7a845f64c4e29f34e94cf09f26693b30
       vertices: []
       indices: 
       edges: []
@@ -308,7 +559,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 76122ce51fe5faa43bd6ce33362e13b7
+    spriteID: bdc686635964bef49bcd0b9e234a8981
     vertices: []
     indices: 
     edges: []
