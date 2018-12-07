@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Diamond
   - SpawnerOfEnemy
+  - Effect_Cells
+  - Canvases
+  - Chest
+  - TNT
   layers:
   - Default
   - TransparentFX

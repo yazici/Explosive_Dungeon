@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DiamondSpawn : MonoBehaviour {
+    public Effects_Mechanics Effects_Mechanics;
     private static GameObject DiamondCloned;
     public GameObject DiamondPrefab;
     public static bool doubleDiamonds;
@@ -27,8 +28,10 @@ public class DiamondSpawn : MonoBehaviour {
     public static void TakeDiamond() { if (doubleDiamonds) { CurrentValueOfDiamonds = CurrentValueOfDiamonds + 2; } else { CurrentValueOfDiamonds++; } }
     public IEnumerator SetDoubleDiamonds()
     {
+        Effects_Mechanics.ChangeStateOfEffectIcon(Effects_Mechanics.Effects.Double_Diamonds, true);
         yield return new WaitForSeconds(15);
         doubleDiamonds = false;
+        Effects_Mechanics.ChangeStateOfEffectIcon(Effects_Mechanics.Effects.Double_Diamonds, false);
     }
 }
 

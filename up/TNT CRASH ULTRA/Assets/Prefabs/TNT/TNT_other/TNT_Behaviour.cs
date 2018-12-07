@@ -19,15 +19,13 @@ public class TNT_Behaviour : MonoBehaviour {
         TNT_Cloned = Instantiate(TNT_prefab, Spawner.transform.position, Quaternion.identity);
         TNT_Cloned_Anim = TNT_Cloned.GetComponent<Animator>();
         TNT_Cloned_Anim.SetInteger("State", 0);
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSecondsRealtime(5);
         TNT_Cloned_Anim.SetInteger("State", 1);
         explosion_wav.Play();
         CameraShake.Should_Shake = true;
-        if (TNT_Trigger.isPlayerOnTriger() && !MoveAndJump.Invisible) { MoveAndJump.Died = true; }
-        yield return new WaitForSeconds(0.413f);
+        if (TNT_Trigger.isPlayerOnTriger() && !MoveAndJump.Invisible) { MoveAndJump.KillPlayer(); }
+        yield return new WaitForSecondsRealtime(0.413f);
         Destroy(TNT_Cloned);
-        
         StartCoroutine(TNT_SPAWN());
-        //babax kill
     }
 }

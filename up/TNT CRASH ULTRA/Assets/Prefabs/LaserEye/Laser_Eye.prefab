@@ -164,7 +164,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: e7ba4500f574ba04cbc35f8005fb06cb, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -226,7 +226,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1123382517
-  m_SortingLayer: 3
+  m_SortingLayer: 12
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300006, guid: a15a74e22a2e99d499f5e4fb0e27cb1c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

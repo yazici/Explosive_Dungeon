@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f23d49a3029a9424ea999bf4be9c1953
+guid: 98074bd8fb8f95a4a8b08ef54dc35779
 TextureImporter:
   fileIDToRecycleName:
     21300000: ButtonsDeathScreen_0
@@ -29,12 +29,6 @@ TextureImporter:
     21300048: ButtonsDeathScreen_24
     21300050: ButtonsDeathScreen_25
     21300052: ButtonsDeathScreen_26
-    21300054: ButtonsDeathScreen_27
-    21300056: ButtonsDeathScreen_28
-    21300058: ButtonsDeathScreen_29
-    21300060: ButtonsDeathScreen_30
-    21300062: ButtonsDeathScreen_31
-    21300064: ButtonsDeathScreen_32
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -96,7 +90,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -107,7 +101,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -118,7 +112,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -142,7 +136,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd1e6ae661fa88a47b3bbc9d1c75ad1a
+      spriteID: 905dcfa573773d843bc2302a00865411
       vertices: []
       indices: 
       edges: []
@@ -162,7 +156,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a904a22264af4e44b56fc7ce27170c8
+      spriteID: 94e74c57fe8282847bc5f79f0084e0dc
       vertices: []
       indices: 
       edges: []
@@ -182,7 +176,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40e2c91ff24e0844d8ea5a5be2b77432
+      spriteID: e1822fd98da75894d860a3cd2f3aaf88
       vertices: []
       indices: 
       edges: []
@@ -202,7 +196,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ccb3c729fe53c1641bfb870852bca7c7
+      spriteID: d930112f9c445b941bc5ca1682f18318
       vertices: []
       indices: 
       edges: []
@@ -222,7 +216,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f52f0993c5f2ec54aafc35791747df47
+      spriteID: ef1839d7d2f1dc44783b5cb0d037a465
       vertices: []
       indices: 
       edges: []
@@ -242,7 +236,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d6c074f8f19e0c449afbd59e9d5dc84
+      spriteID: e98a358033ca7c14e9f8bd5b10b9ac02
       vertices: []
       indices: 
       edges: []
@@ -262,7 +256,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad1ac3decf2a2c148be3ad7787fa9a32
+      spriteID: bd37dd3b7f2e5024e8ed479493002589
       vertices: []
       indices: 
       edges: []
@@ -282,7 +276,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 593afb0410f5ac74da58085fc685b775
+      spriteID: 900a46996bfce4645a33a26fbac7c4cb
       vertices: []
       indices: 
       edges: []
@@ -302,7 +296,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a90b8540f17ff30488fef48b2df33b3e
+      spriteID: bc250c4e2e9a73c4892cf0eaa22324cd
       vertices: []
       indices: 
       edges: []
@@ -322,7 +316,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b304fa763da877946bb7c5f664ffafc9
+      spriteID: 6c9f2e77e37e52342b3cc6f04ea4e2ed
       vertices: []
       indices: 
       edges: []
@@ -342,7 +336,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65073098e14f99d4fb429e92f0caf066
+      spriteID: 23adf6450f5d6d643aaf79cd05f644f5
       vertices: []
       indices: 
       edges: []
@@ -362,7 +356,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0693af5229a659044972085b10fe2e89
+      spriteID: f9b623b520e1c07478ec2136cf886095
       vertices: []
       indices: 
       edges: []
@@ -382,7 +376,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ff7a0b587564df4b87be68414d31743
+      spriteID: 6e0f6257ec1be274dac9f42f1902c60a
       vertices: []
       indices: 
       edges: []
@@ -402,7 +396,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81818883a314aff478a48f9a7426c753
+      spriteID: 735f24a0c52d6be40aaf21667ad96c70
       vertices: []
       indices: 
       edges: []
@@ -422,7 +416,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da17f822e9928194b8c16f805545e85a
+      spriteID: 4c3e45e4c4807ca4eac23c34f929ad93
       vertices: []
       indices: 
       edges: []
@@ -442,7 +436,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0500a88bdc66bcb49b8cae32981b00c7
+      spriteID: 8f98dd74239d9c34aab8a19b9d7a0f5d
       vertices: []
       indices: 
       edges: []
@@ -462,7 +456,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f69adfe2f0430b34a9fee72511b4e44d
+      spriteID: 20961040f73dfbb4d8b71effec4fc7af
       vertices: []
       indices: 
       edges: []
@@ -482,7 +476,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4435bf528eaaf9943bb9e743f933a2ed
+      spriteID: ebbf04bda7351dd4893844b4e1b51e00
       vertices: []
       indices: 
       edges: []
@@ -502,7 +496,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0000c98e0e009864b8a5b6cb72e142d3
+      spriteID: 5a98f930458185b438407c29eabf4c82
       vertices: []
       indices: 
       edges: []
@@ -522,7 +516,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5bd80a452e90f6347ac00d3923aea9af
+      spriteID: 3fdc2ae8bd1d9764c9fd47ca9546fa18
       vertices: []
       indices: 
       edges: []
@@ -542,7 +536,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a8288ad52a82884ea0597ed3a0c8481
+      spriteID: e7bb1305e23646a4fa806370e38dc950
       vertices: []
       indices: 
       edges: []
@@ -562,7 +556,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5eb5853c8470d95469c098ab320f3b71
+      spriteID: 1bfe3d59bf3c0784aadd9c16a77f5df0
       vertices: []
       indices: 
       edges: []
@@ -582,7 +576,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 72818ef23f941d3499b262b96ee7331a
+      spriteID: ad7984a55847d4443ae603d8dcc52a69
       vertices: []
       indices: 
       edges: []
@@ -591,8 +585,8 @@ TextureImporter:
       name: ButtonsDeathScreen_23
       rect:
         serializedVersion: 2
-        x: 325
-        y: 28
+        x: 0
+        y: 14
         width: 65
         height: 14
       alignment: 0
@@ -602,7 +596,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9efdbd755b0ad4942b0aecab31e4b582
+      spriteID: 8890c7d059eb9d742812cf91fa3ddc66
       vertices: []
       indices: 
       edges: []
@@ -611,7 +605,7 @@ TextureImporter:
       name: ButtonsDeathScreen_24
       rect:
         serializedVersion: 2
-        x: 0
+        x: 65
         y: 14
         width: 65
         height: 14
@@ -622,7 +616,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfcdef4259c45f345a7c57fe534ff687
+      spriteID: 2d148045a0208f84b996be185dc54659
       vertices: []
       indices: 
       edges: []
@@ -631,106 +625,6 @@ TextureImporter:
       name: ButtonsDeathScreen_25
       rect:
         serializedVersion: 2
-        x: 65
-        y: 14
-        width: 65
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3a1c050ac8fe2154b9b551a6c0f2d9e8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ButtonsDeathScreen_26
-      rect:
-        serializedVersion: 2
-        x: 130
-        y: 14
-        width: 65
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0f921d8c60b52b040bf9b9fc1f51b692
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ButtonsDeathScreen_27
-      rect:
-        serializedVersion: 2
-        x: 195
-        y: 14
-        width: 65
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c98c824b49a7ff44ba598b5228b9629a
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ButtonsDeathScreen_28
-      rect:
-        serializedVersion: 2
-        x: 260
-        y: 14
-        width: 65
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8c463355bb36bb143850a5f21b5e4d52
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ButtonsDeathScreen_29
-      rect:
-        serializedVersion: 2
-        x: 325
-        y: 14
-        width: 65
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d38f80907f0d9774392a27df4f1481a7
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ButtonsDeathScreen_30
-      rect:
-        serializedVersion: 2
         x: 0
         y: 0
         width: 65
@@ -742,13 +636,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5db8644034d774449850fb61044f9891
+      spriteID: 298440b230c9d474aa14995503ca4740
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ButtonsDeathScreen_31
+      name: ButtonsDeathScreen_26
       rect:
         serializedVersion: 2
         x: 65
@@ -762,27 +656,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5da677a1e682de54a996c848f05e9d3d
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ButtonsDeathScreen_32
-      rect:
-        serializedVersion: 2
-        x: 130
-        y: 0
-        width: 65
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a548b9731eb5ab94cbfd2f4e4e774fa8
+      spriteID: 8ee47f37db19a3c4ca22bf1c85576135
       vertices: []
       indices: 
       edges: []
@@ -790,7 +664,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 14c31bc68b557814694a1823abc910d7
+    spriteID: 1506eee17c03ea545b3f1b8009c15abd
     vertices: []
     indices: 
     edges: []

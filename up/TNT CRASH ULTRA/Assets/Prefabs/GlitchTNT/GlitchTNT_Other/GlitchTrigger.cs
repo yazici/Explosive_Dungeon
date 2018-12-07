@@ -31,8 +31,8 @@ public class GlitchTrigger : MonoBehaviour {
         yield return new WaitForSeconds(Random.Range(3.0f, 6.0f));
         a.SetInteger("State", 1);
         explose_wav.Play();
-        if (isOnTrigger && !MoveAndJump.Invisible) { MoveAndJump.Died = true; }
-        yield return new WaitForSeconds(0.413f);
-        Destroy(gameObject.transform.parent.gameObject);
+        if (isOnTrigger && !MoveAndJump.Invisible) { MoveAndJump.KillPlayer(); if (gameObject.transform.parent.gameObject != null) { Destroy(gameObject.transform.parent.gameObject); } }
+        yield return new WaitForSecondsRealtime(0.413f);
+        if (gameObject.transform.parent.gameObject != null) { Destroy(gameObject.transform.parent.gameObject); } 
     }
 }

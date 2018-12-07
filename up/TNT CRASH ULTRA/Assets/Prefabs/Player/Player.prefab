@@ -84,7 +84,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1.008389
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 1
@@ -119,7 +119,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 5a93792d308aec44ca761327ae1d0d89, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -146,7 +146,6 @@ MonoBehaviour:
     m_Bits: 256
   PlayerPhysics: {fileID: 50148282283737656}
   JumpForce: 8.7
-  init_MoveForce: 0
 --- !u!212 &212390663809483026
 SpriteRenderer:
   m_ObjectHideFlags: 1

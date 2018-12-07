@@ -24,17 +24,18 @@ public class TriggerControl : MonoBehaviour {
                     break;
                 case Chest.Rainbow:
                     MoveAndJump.Invisible = true;
-
+                    
                     break;
                 case Chest.Glitch:
                     GlitchTNTBehaviour.spawntnt = true;
 
                     break;
                 default: // Chest.Classic
+                    
                     MoveAndJump.speedboost = true;
                     break;
             }
-            Destroy(gameObject.transform.parent.gameObject);
+            if (gameObject.transform.parent.gameObject != null) { Destroy(gameObject.transform.parent.gameObject); }
         }
     }
 }

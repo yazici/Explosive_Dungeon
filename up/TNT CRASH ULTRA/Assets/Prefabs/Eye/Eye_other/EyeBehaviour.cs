@@ -48,7 +48,7 @@ public class EyeBehaviour : MonoBehaviour {
         CameraShake.Should_Shake = true;
         explosion_wav.Play();
         isExplosion = true;
-        if (EyeTrigger.isPlayerOnTriger() && !MoveAndJump.Invisible) { MoveAndJump.Died = true; }
+        if (EyeTrigger.isPlayerOnTriger() && !MoveAndJump.Invisible) { MoveAndJump.KillPlayer(); Destroy(ClonedEnemy); }
         yield return new WaitForSeconds(0.413f);
         Destroy(ClonedEnemy);
         yield return new WaitForSeconds(3.75f);

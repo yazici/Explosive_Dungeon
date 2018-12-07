@@ -10,7 +10,7 @@ public class Plant : MonoBehaviour {
     }
     public void SpawnPlant()
     {
-        if (Random.Range(0, 3) == 1)
+        if (Random.Range(0, 2) == 1)
         {
             this.gameObject.GetComponent<SpriteRenderer>().sprite = Plants[Random.Range(0, Plants.Length)];
         }
