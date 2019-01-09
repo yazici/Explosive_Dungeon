@@ -11,7 +11,7 @@ public class DeathZone : MonoBehaviour {
         }
         else if (other.CompareTag("Player"))
         {
-            MoveAndJump.KillPlayer();
+            MoveAndJump.Instance.KillPlayer();
         }
     }
 }

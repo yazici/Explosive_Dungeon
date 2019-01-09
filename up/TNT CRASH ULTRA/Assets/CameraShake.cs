@@ -25,7 +25,7 @@ public class CameraShake : MonoBehaviour {
             if (duration > 0)
             {
                 camera.localPosition = startPosition + Random.insideUnitSphere * shake_power;
-                duration -= Time.deltaTime * slow_down_amount;
+                duration -= Time.unscaledDeltaTime * slow_down_amount;
             }
             else
             {

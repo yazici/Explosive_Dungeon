@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class MoveAndJump : MonoBehaviour {
+    public static MoveAndJump Instance;
     [Header("Player")] // Игрок
     public Transform Player; // Координаты игрока
-    public static bool Died; // Мертв ли игрок?
-    public static bool Invisible; // Невидимость
-    public static GameObject Shake;
+    public bool Died; // Мертв ли игрок?
+    public bool Invisible; // Невидимость
+    public GameObject Shake;
     public Effects_Mechanics Effects_Mechanics;
     [Header("Move")] // Ходьба
     private int MoveAxis; // Направление движения   
     private bool facingRight;
-    public static bool speedboost;
+    public bool speedboost;
     public float MoveForce; // Скорость
 
     [Header("Animations")] // Анимации
@@ -24,28 +25,34 @@ public class MoveAndJump : MonoBehaviour {
     private bool onGround; // Игрок на земле?
     public Rigidbody2D PlayerPhysics; // Физика игрока
     public float JumpForce = 0; // Сила прыжка
-    
+
     public static GameObject[] canvases;
 
     private float init_MoveForce;
     private void Start()
     {
+        Instance = this;
         Shake = GameObject.Find("Main Camera");
         canvases = GameObject.FindGameObjectsWithTag("Canvases");
         init_MoveForce = MoveForce;
     }
-    public static void KillPlayer()
+    public IEnumerator KillPlayer()
     {
+        Died = true;
+        PlayerMainAnimator.Play("Player_die", 0);
+        yield return new WaitForSecondsRealtime(2f);
+        Destroy(Player.gameObject.GetComponent<SpriteRenderer>());
+        yield return new WaitForSecondsRealtime(1f);
         Time.timeScale = 0;
         Shake.GetComponent<CameraShake>().enabled = false;
-        Died = true;
         canvases[0].GetComponent<Canvas>().enabled = false;
         canvases[1].GetComponent<Canvas>().enabled = true;
     }
-    public static void Respawn()
+    public void StartRespawning() { StartCoroutine(Respawn()); Time.timeScale = 1; }
+    public IEnumerator Respawn()
     {
-        Time.timeScale = 1;
-        Shake.GetComponent<CameraShake>().enabled = true;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        yield return new WaitForSecondsRealtime(0.2f);
         Died = false;
         Invisible = false;
         speedboost = false;
@@ -53,29 +60,19 @@ public class MoveAndJump : MonoBehaviour {
         DiamondSpawn.CurrentValueOfDiamonds = 0;
         canvases[0].GetComponent<Canvas>().enabled = true;
         canvases[1].GetComponent<Canvas>().enabled = false;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        
     }
 
    
     public void Update() // Каждый кадр (Зависит от FPS)
     {
-#if UNITY_EDITOR
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            Jump();
-        }
-        if (Input.GetAxisRaw("Horizontal") > 0) { Flip(false); } else { Flip(true); }
-            Move((int)Input.GetAxisRaw("Horizontal"));
-#endif
-        if (speedboost) { StartCoroutine(OffSpeedboost()); }
-        if (Invisible) { StartCoroutine(SetInvisible()); }
         if (Died) { MoveForce = 0; } else if(!Died && speedboost) { MoveForce = 9; } else if (!Died && !speedboost) { MoveForce = 6; }
         onGround = Physics2D.OverlapCircle(GroundChecker.position, 0.1f, Ground); // Проверка на земле ли игрок
         PlayerPhysics.velocity = new Vector2(MoveForce * MoveAxis, PlayerPhysics.velocity.y); // Ходьба
         if (onGround && MoveAxis == 0 && !Died) { PlayerMainAnimator.SetInteger("State", 0); } // Анимация "Idle"
         if (MoveAxis == 1 && onGround && !Died || MoveAxis == -1 && onGround && !Died) { PlayerMainAnimator.SetInteger("State", 1); } // Анимация "Run"
         if (!onGround && !Died) { PlayerMainAnimator.SetInteger("State", 2); } // Анимация "Jump"
-        if (Died) PlayerMainAnimator.SetInteger("State", 3); // Анимация "Die"
+        //if (Died) PlayerMainAnimator.SetInteger("State", 3); // Анимация "Die"
     }
     public void Move(int Axis) // Ходьба (Axis - направление)
     {
@@ -111,5 +108,13 @@ public class MoveAndJump : MonoBehaviour {
         speedboost = false;
         Effects_Mechanics.ChangeStateOfEffectIcon(Effects_Mechanics.Effects.Speed, false);
     }
-    IEnumerator SetInvisible() { Effects_Mechanics.ChangeStateOfEffectIcon(Effects_Mechanics.Effects.Armor, true); this.gameObject.GetComponent<SpriteRenderer>().color = new Color32(255,255,255,255/2);  yield return new WaitForSeconds(15f); Invisible = false; this.gameObject.GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255); Effects_Mechanics.ChangeStateOfEffectIcon(Effects_Mechanics.Effects.Armor, false); }
+    IEnumerator SetInvisible() {
+        Invisible = true;
+        Effects_Mechanics.ChangeStateOfEffectIcon(Effects_Mechanics.Effects.Armor, true);
+        this.gameObject.GetComponent<SpriteRenderer>().color = new Color32(255,255,255,255/2);
+        yield return new WaitForSeconds(15f); Invisible = false;
+        this.gameObject.GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
+        Effects_Mechanics.ChangeStateOfEffectIcon(Effects_Mechanics.Effects.Armor, false);
+        Invisible = false;
+    }
 }

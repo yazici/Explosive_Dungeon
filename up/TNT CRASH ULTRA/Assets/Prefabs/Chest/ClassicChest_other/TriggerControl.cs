@@ -15,24 +15,23 @@ public class TriggerControl : MonoBehaviour {
         if (collision.gameObject.CompareTag("Player"))
         {
             diamond_wav.Play();
-            Debug.Log("Вы подобрали сундук!");
             switch (typeOfThisChest)
             {
                 case Chest.Diamond:
-                    DiamondSpawn.doubleDiamonds = true;
-
+                    DiamondSpawn.Instance.StartCoroutine("SetDoubleDiamonds");
+                    Debug.Log("Вы подобрали алмазный сундук!");
                     break;
                 case Chest.Rainbow:
-                    MoveAndJump.Invisible = true;
-                    
+                    MoveAndJump.Instance.StartCoroutine("SetInvisible");
+                    Debug.Log("Вы подобрали радужный сундук!");
                     break;
                 case Chest.Glitch:
-                    GlitchTNTBehaviour.spawntnt = true;
-
+                    Glitch_Main.Instance.SpawnGlitchTNTs();
+                    Debug.Log("Вы подобрали глитч-сундук!");
                     break;
                 default: // Chest.Classic
-                    
-                    MoveAndJump.speedboost = true;
+                    Debug.Log("Вы подобрали классический сундук!");
+                    MoveAndJump.Instance.StartCoroutine("OffSpeedboost");
                     break;
             }
             if (gameObject.transform.parent.gameObject != null) { Destroy(gameObject.transform.parent.gameObject); }

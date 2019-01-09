@@ -19,7 +19,7 @@ public class LaserEye_Behaviour : MonoBehaviour {
     }
     private void FixedUpdate()
     {
-        if (isExplosion) { if (LaserEye_Trigger.isPlayerOnTriger() && !MoveAndJump.Invisible || LaserEYETRIGGER2.isPlayerOnTriger() && !MoveAndJump.Invisible) { MoveAndJump.KillPlayer(); } }
+        if (isExplosion) { if (LaserEye_Trigger.isPlayerOnTriger() && !MoveAndJump.Instance.Invisible || LaserEYETRIGGER2.isPlayerOnTriger() && !MoveAndJump.Instance.Invisible) { MoveAndJump.Instance.StartCoroutine("KillPlayer"); } }
         if (ClonedEnemy != null && isExplosion == false)
         {
             ClonedEnemy.transform.position = Vector2.MoveTowards(ClonedEnemy.transform.position, TargetPlayer.transform.position, 17.5f / 10 * Time.deltaTime);
@@ -34,16 +34,16 @@ public class LaserEye_Behaviour : MonoBehaviour {
         ClonedEnemy = Instantiate(EyePrefab, Spawners[Random.Range(0, 2)].transform.position, Quaternion.identity) as GameObject;
         EnemyAnimator = ClonedEnemy.GetComponent<Animator>();
         EnemyAnimator.SetInteger("State", 0);
-        yield return new WaitForSecondsRealtime(7.5f);//7,5
+        yield return new WaitForSeconds(7.5f);//7,5
         EnemyAnimator.SetInteger("State", 1);
         CameraShake.Should_Shake = true;
-        if (isExplosion) { if (LaserEye_Trigger.isPlayerOnTriger() && !MoveAndJump.Invisible  || LaserEYETRIGGER2.isPlayerOnTriger() && !MoveAndJump.Invisible) { MoveAndJump.KillPlayer();  } }
+        if (isExplosion) { if (LaserEye_Trigger.isPlayerOnTriger() && !MoveAndJump.Instance.Invisible  || LaserEYETRIGGER2.isPlayerOnTriger() && !MoveAndJump.Instance.Invisible) { MoveAndJump.Instance.StartCoroutine("KillPlayer"); } }
         explosion_wav.Play();
         isExplosion = true;
-        yield return new WaitForSecondsRealtime(0.5f);//0,5
+        yield return new WaitForSeconds(0.5f);//0,5
         isExplosion = false;
         Destroy(ClonedEnemy);
-        yield return new WaitForSecondsRealtime(3.75f); // 3,75
+        yield return new WaitForSeconds(3.75f); // 3,75
         StartCoroutine(EnemySpawn());
     }
 }

@@ -33,20 +33,20 @@ public class ClassicChest : MonoBehaviour
         switch (RandomiseChest())
         {
             case Chest.Diamond:
-                ClonedChest = Instantiate(ChestPrefabs[1], Spawner.transform.position, Quaternion.identity) as GameObject;
-                Debug.Log("Мы все умрем");
+                Instantiate(ChestPrefabs[1], Spawner.transform.position, Quaternion.identity);
+                Debug.Log("Алмазный сундук заспавнен!");
                 break;
             case Chest.Rainbow:
-                ClonedChest = Instantiate(ChestPrefabs[2], Spawner.transform.position, Quaternion.identity) as GameObject;
-                Debug.Log("Мы все умрем");
+                Instantiate(ChestPrefabs[2], Spawner.transform.position, Quaternion.identity);
+                Debug.Log("Радужный сундук заспавнен!");
                 break;
             case Chest.Glitch:
-                ClonedChest = Instantiate(ChestPrefabs[3], Spawner.transform.position, Quaternion.identity) as GameObject;
-                Debug.Log("Мы все умрем");
+                Instantiate(ChestPrefabs[3], Spawner.transform.position, Quaternion.identity);
+                Debug.Log("Глитч-сундук заспавнен!");
                 break;
             default: // Chest.Classic
-                ClonedChest = Instantiate(ChestPrefabs[0], Spawner.transform.position, Quaternion.identity) as GameObject;
-                Debug.Log("Мы все умрем");
+                Instantiate(ChestPrefabs[0], Spawner.transform.position, Quaternion.identity);
+                Debug.Log("Классический сундук заспавнен!");
                 break;
         }
     }

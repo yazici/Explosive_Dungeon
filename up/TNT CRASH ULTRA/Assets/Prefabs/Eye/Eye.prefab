@@ -21,8 +21,7 @@ GameObject:
   - component: {fileID: 4099769139052982}
   - component: {fileID: 212035101326745886}
   - component: {fileID: 95974033720181758}
-  - component: {fileID: 58444465832162586}
-  - component: {fileID: 114016980110910082}
+  - component: {fileID: 114045024705985874}
   m_Layer: 0
   m_Name: Eye
   m_TagString: Untagged
@@ -37,27 +36,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1625510303060604}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.4438376, y: -0.5553287, z: 0}
+  m_LocalPosition: {x: -13.28, y: 1.76, z: 0}
   m_LocalScale: {x: 6, y: 6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &58444465832162586
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1625510303060604}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.275
 --- !u!95 &95974033720181758
 Animator:
   serializedVersion: 3
@@ -76,7 +60,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114016980110910082
+--- !u!114 &114045024705985874
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -84,9 +68,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1625510303060604}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed7485fb919fe2f42beff958da601fa3, type: 3}
+  m_Script: {fileID: 11500000, guid: 48c88a156de14b9488bebb5969a66217, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Explosion: {fileID: 1759005901652834, guid: 1bfc2b2f3a200b3418a744dda843ec09, type: 2}
 --- !u!212 &212035101326745886
 SpriteRenderer:
   m_ObjectHideFlags: 1

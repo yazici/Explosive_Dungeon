@@ -4,19 +4,22 @@ using UnityEngine;
 
 public class DiamondSpawn : MonoBehaviour {
     public Effects_Mechanics Effects_Mechanics;
+    public static DiamondSpawn Instance;
     private static GameObject DiamondCloned;
     public GameObject DiamondPrefab;
-    public static bool doubleDiamonds;
+    
     public Transform DiamondSpawner;
     public static int CurrentValueOfDiamonds;
     private static AudioSource diamond_wav;
+    public static bool doubleDiamonds;
+
     private void Start()
     {
+        Instance = this;
         diamond_wav = GameObject.Find("Audio_Diamond").GetComponent<AudioSource>();
     }
     private void Update()
     {
-        if (doubleDiamonds) { StartCoroutine(SetDoubleDiamonds()); }
         if (DiamondCloned == null)
         {
             DiamondSpawner.position = new Vector2(Random.Range(-8.0f, 8.0f), DiamondSpawner.position.y);
@@ -26,10 +29,11 @@ public class DiamondSpawn : MonoBehaviour {
     }
     public static void DestroyDiamond() { Destroy(DiamondCloned); diamond_wav.Play(); }
     public static void TakeDiamond() { if (doubleDiamonds) { CurrentValueOfDiamonds = CurrentValueOfDiamonds + 2; } else { CurrentValueOfDiamonds++; } }
-    public IEnumerator SetDoubleDiamonds()
+    IEnumerator SetDoubleDiamonds()
     {
+        doubleDiamonds = true;
         Effects_Mechanics.ChangeStateOfEffectIcon(Effects_Mechanics.Effects.Double_Diamonds, true);
-        yield return new WaitForSeconds(15);
+        yield return new WaitForSeconds(15f);
         doubleDiamonds = false;
         Effects_Mechanics.ChangeStateOfEffectIcon(Effects_Mechanics.Effects.Double_Diamonds, false);
     }

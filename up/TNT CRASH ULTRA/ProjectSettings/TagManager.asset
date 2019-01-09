@@ -68,14 +68,14 @@ TagManager:
   - name: Chest_Glitch
     uniqueID: 4185600105
     locked: 0
-  - name: LaserTNT
-    uniqueID: 3868932907
-    locked: 0
   - name: TNT
     uniqueID: 3256737523
     locked: 0
   - name: GlitchTNT
     uniqueID: 3500052239
+    locked: 0
+  - name: LaserTNT
+    uniqueID: 3868932907
     locked: 0
   - name: Plants
     uniqueID: 955261815
@@ -85,6 +85,9 @@ TagManager:
     locked: 0
   - name: Eye
     uniqueID: 2664027865
+    locked: 0
+  - name: Explosion
+    uniqueID: 241620653
     locked: 0
   - name: UI
     uniqueID: 4238176917

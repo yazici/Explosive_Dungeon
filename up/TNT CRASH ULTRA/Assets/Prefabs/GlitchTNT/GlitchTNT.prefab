@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 50250095661873718}
   - component: {fileID: 61832183978806588}
   - component: {fileID: 95828996254917728}
+  - component: {fileID: 114787844231137144}
   m_Layer: 9
   m_Name: GlitchTNT
   m_TagString: TNT
@@ -121,18 +122,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0044885203, y: -0.013952561}
+  m_Offset: {x: -0.0000035762787, y: -0.0062146597}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.18, y: 0.18}
-    newSize: {x: 0.18, y: 0.18}
+    oldSize: {x: 0.17, y: 0.17}
+    newSize: {x: 0.17, y: 0.17}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.15050395, y: 0.16686715}
+  m_Size: {x: 0.15050396, y: 0.16224077}
   m_EdgeRadius: 0
 --- !u!95 &95828996254917728
 Animator:
@@ -152,6 +153,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114787844231137144
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1968475120265290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f7619e0961e40f4c9473416adf105e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Explosion: {fileID: 1759005901652834, guid: 1bfc2b2f3a200b3418a744dda843ec09, type: 2}
 --- !u!114 &114807253588455198
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -164,6 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOnTrigger: 0
+  explose_wav: {fileID: 0}
 --- !u!212 &212911414077496088
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -197,14 +211,14 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -794915057
-  m_SortingLayer: 10
+  m_SortingLayer: 9
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8a6304692f52ff34a918969de6827020, type: 3}
+  m_Sprite: {fileID: 21300002, guid: 21e2209a4bbc39c45af7bf8bc5ce87c3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.18, y: 0.18}
+  m_Size: {x: 0.17, y: 0.17}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

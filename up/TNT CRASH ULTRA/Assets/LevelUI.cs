@@ -14,7 +14,7 @@ public class LevelUI : MonoBehaviour {
     public void Start()
     {
         for (int i = 0; i != toTranslate.Length; i++) {
-            toTranslate[i].text = ChangeLanguage.lng.Word[i + 31];
+           // toTranslate[i].text = ChangeLanguage.lng.Word[i + 31];
         }
     }
     public void ChangeWindow(int Window) {
