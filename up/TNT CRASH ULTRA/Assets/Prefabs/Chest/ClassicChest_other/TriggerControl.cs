@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class TriggerControl : MonoBehaviour {
     public enum Chest { Classic, Diamond, Rainbow, Glitch }
-    private AudioSource diamond_wav;
+   
     public Chest typeOfThisChest;
-    private void Start()
-    {
-        diamond_wav = GameObject.Find("Audio_Diamond").GetComponent<AudioSource>();
-    }
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            diamond_wav.Play();
+            AudioManager.Instance.SoundPlay(8);
             switch (typeOfThisChest)
             {
                 case Chest.Diamond:

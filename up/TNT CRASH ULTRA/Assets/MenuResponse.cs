@@ -9,7 +9,7 @@ public class MenuResponse : MonoBehaviour
 
     public void Start() { InvokeRepeating("ChangePlay", 0, CHANGE_COLOR_TIME); }
 
-    public void ChangeScene() { SceneManager.LoadScene(1); }
+    public void ChangeScene(int Scene) { SceneManager.LoadScene(Scene); }
 
     public void OpenTwitter() { Application.OpenURL("https://twitter.com/8ilver_"); }
 

@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 public class MoveAndJump : MonoBehaviour {
     public static MoveAndJump Instance;
+    private Image record_notification;
     [Header("Player")] // Игрок
     public Transform Player; // Координаты игрока
     public bool Died; // Мертв ли игрок?
@@ -26,31 +29,114 @@ public class MoveAndJump : MonoBehaviour {
     public Rigidbody2D PlayerPhysics; // Физика игрока
     public float JumpForce = 0; // Сила прыжка
 
-    public static GameObject[] canvases;
+    bool pause;
 
-    private float init_MoveForce;
+
+    public GameObject[] canvases;
+    private GameObject unPauseCounter;
+    private GameObject[] onLevelButtons;
+    //private float init_MoveForce;
     private void Start()
     {
+        Invoke("SetPause", 2.0f);
+        AudioManager.Instance.InitializeSources();
+        record_notification = GameObject.Find("Record_Notifications").GetComponent<Image>();
+        unPauseCounter = GameObject.Find("Exit_From_Pause");
+        unPauseCounter.SetActive(false);
+        onLevelButtons = GameObject.FindGameObjectsWithTag("onLevelButtons");
         Instance = this;
-        Shake = GameObject.Find("Main Camera");
-        canvases = GameObject.FindGameObjectsWithTag("Canvases");
-        init_MoveForce = MoveForce;
+        Shake = GameObject.Find("Main Camera");;
+       // init_MoveForce = MoveForce;
     }
-    public IEnumerator KillPlayer()
+    void SetPause() { pause = true; }
+    public IEnumerator KillPlayer(bool fast_die=false)
     {
+        PlayerPrefs.SetInt("DiamondsCount", PlayerPrefs.GetInt("DiamondsCount") + DiamondSpawn.CurrentValueOfDiamonds);
         Died = true;
-        PlayerMainAnimator.Play("Player_die", 0);
-        yield return new WaitForSecondsRealtime(2f);
-        Destroy(Player.gameObject.GetComponent<SpriteRenderer>());
-        yield return new WaitForSecondsRealtime(1f);
-        Time.timeScale = 0;
+        if (!PlayerPrefs.HasKey("BestScore"))
+        {
+            PlayerPrefs.SetInt("BestScore", DiamondSpawn.CurrentValueOfDiamonds);
+            GameObject.Find("BestScore_Value").GetComponent<Text>().text = "" + DiamondSpawn.CurrentValueOfDiamonds;
+            GameObject.Find("YourScore_Value").GetComponent<Text>().text = "" + DiamondSpawn.CurrentValueOfDiamonds;
+            record_notification.enabled = true;
+            print("1");
+        }
+        else if (PlayerPrefs.GetInt("BestScore") <= DiamondSpawn.CurrentValueOfDiamonds)
+        {
+            PlayerPrefs.SetInt("BestScore", DiamondSpawn.CurrentValueOfDiamonds);
+            GameObject.Find("BestScore_Value").GetComponent<Text>().text = "" + DiamondSpawn.CurrentValueOfDiamonds;
+            GameObject.Find("YourScore_Value").GetComponent<Text>().text = "" + DiamondSpawn.CurrentValueOfDiamonds;
+            record_notification.enabled = true;
+            print("2");
+        }
+        else
+        {
+            GameObject.Find("BestScore_Value").GetComponent<Text>().text = "" + PlayerPrefs.GetInt("BestScore");
+            GameObject.Find("YourScore_Value").GetComponent<Text>().text = "" + DiamondSpawn.CurrentValueOfDiamonds;
+            record_notification.enabled = false;
+            print("3");
+        }
+        if (!fast_die)
+        {
+            PlayerMainAnimator.Play("Player_die", 0);
+            yield return new WaitForSeconds(2f);
+            Destroy(Player.gameObject.GetComponent<SpriteRenderer>());
+            yield return new WaitForSeconds(1f);
+            Time.timeScale = 0;
+        }
         Shake.GetComponent<CameraShake>().enabled = false;
         canvases[0].GetComponent<Canvas>().enabled = false;
         canvases[1].GetComponent<Canvas>().enabled = true;
+        canvases[2].GetComponent<Canvas>().enabled = false;
+    }
+    public void Pause()
+    {
+        if (pause && !Died)
+        {
+            GameObject.Find("YourScore_Value_Pause").GetComponent<Text>().text = "" + DiamondSpawn.CurrentValueOfDiamonds;
+            Time.timeScale = 0;
+            canvases[0].GetComponent<Canvas>().enabled = false;
+            canvases[1].GetComponent<Canvas>().enabled = false;
+            canvases[2].GetComponent<Canvas>().enabled = true;
+        }
+    }
+    public void unPause()
+    {
+        StartCoroutine(unPauseAction());
+    }
+    IEnumerator unPauseAction()
+    {
+        unPauseCounter.SetActive(true);
+        unPauseCounter.GetComponent<Text>().text = "3";
+        canvases[0].GetComponent<Canvas>().enabled = true;
+        canvases[1].GetComponent<Canvas>().enabled = false;
+        canvases[2].GetComponent<Canvas>().enabled = false;
+        foreach (GameObject Buttons in onLevelButtons)
+        {
+            Buttons.GetComponent<Button>().enabled = false;
+            if(Buttons.GetComponent<EventTrigger>() != null)
+                Buttons.GetComponent<EventTrigger>().enabled = false;
+        }
+        yield return new WaitForSecondsRealtime(0.667f);
+        unPauseCounter.GetComponent<Text>().text = "2";
+        yield return new WaitForSecondsRealtime(0.667f);
+        unPauseCounter.GetComponent<Text>().text = "1";
+        yield return new WaitForSecondsRealtime(0.667f);
+        unPauseCounter.SetActive(false);
+        foreach (GameObject Buttons in onLevelButtons)
+        {
+            Buttons.GetComponent<Button>().enabled = true;
+            if (Buttons.GetComponent<EventTrigger>() != null)
+                Buttons.GetComponent<EventTrigger>().enabled = true;
+        }
+        Time.timeScale = 1;
     }
     public void StartRespawning() { StartCoroutine(Respawn()); Time.timeScale = 1; }
     public IEnumerator Respawn()
     {
+        record_notification.enabled = false;
+        DiamondSpawn.CurrentValueOfDiamonds = 0;
+        DiamondSpawn.doubleDiamonds = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         yield return new WaitForSecondsRealtime(0.2f);
         Died = false;
@@ -103,6 +189,7 @@ public class MoveAndJump : MonoBehaviour {
     }
     IEnumerator OffSpeedboost()
     {
+        speedboost = true;
         Effects_Mechanics.ChangeStateOfEffectIcon(Effects_Mechanics.Effects.Speed, true);
         yield return new WaitForSeconds(15f);
         speedboost = false;

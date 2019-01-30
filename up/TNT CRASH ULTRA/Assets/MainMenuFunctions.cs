@@ -21,24 +21,9 @@ public class MainMenuFunctions : MonoBehaviour {
     public int[] StatsCounts;
     public void Awake()
     {
-        LoadLanguageFull();
+  //      LoadLanguageFull();
     }
-    public void LoadLanguageFull() {
-        for (int i = 0; i != 31; i++) Translate[i].text = ChangeLanguage.lng.Word[i];
-        for (int i = 0; i != Backs.Length; i++) Backs[i].text = ChangeLanguage.lng.Word[16];
-    }
-    public void ButtonSound(){if(Sounds){ButtonSoundSource.Play ();}}
-    public void StartButton() {StatsCounts[0]++; PlayerPrefs.SetInt("Games", StatsCounts[0]); Application.LoadLevel(1); }
-    public void SetStats() {
-        Stats[0].text = ChangeLanguage.lng.Word[18] + StatsCounts[0];
-        Stats[1].text = ChangeLanguage.lng.Word[19] + StatsCounts[1];
-        Stats[2].text = ChangeLanguage.lng.Word[20] + StatsCounts[2];
-        Stats[3].text = ChangeLanguage.lng.Word[21] + StatsCounts[3];
-        Stats[4].text = ChangeLanguage.lng.Word[22] + StatsCounts[4];
-        Stats[5].text = ChangeLanguage.lng.Word[23] + StatsCounts[5];
-        Stats[6].text = ChangeLanguage.lng.Word[24] + StatsCounts[6];
-        Stats[7].text = ChangeLanguage.lng.Word[25] + StatsCounts[7];
-    }
+  
     private void Start()
     {
         if (PlayerPrefs.HasKey("Games")) { StatsCounts[0] = PlayerPrefs.GetInt("Games"); }

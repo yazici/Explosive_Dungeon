@@ -10,6 +10,7 @@ TagManager:
   - Canvases
   - Chest
   - TNT
+  - onLevelButtons
   layers:
   - Default
   - TransparentFX

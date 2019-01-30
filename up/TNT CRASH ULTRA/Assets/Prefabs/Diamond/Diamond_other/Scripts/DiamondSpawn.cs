@@ -10,13 +10,11 @@ public class DiamondSpawn : MonoBehaviour {
     
     public Transform DiamondSpawner;
     public static int CurrentValueOfDiamonds;
-    private static AudioSource diamond_wav;
     public static bool doubleDiamonds;
 
     private void Start()
     {
         Instance = this;
-        diamond_wav = GameObject.Find("Audio_Diamond").GetComponent<AudioSource>();
     }
     private void Update()
     {
@@ -27,13 +25,13 @@ public class DiamondSpawn : MonoBehaviour {
         Debug.Log(CurrentValueOfDiamonds);
         }
     }
-    public static void DestroyDiamond() { Destroy(DiamondCloned); diamond_wav.Play(); }
+    public static void DestroyDiamond() { Destroy(DiamondCloned); AudioManager.Instance.SoundPlay(4); }
     public static void TakeDiamond() { if (doubleDiamonds) { CurrentValueOfDiamonds = CurrentValueOfDiamonds + 2; } else { CurrentValueOfDiamonds++; } }
     IEnumerator SetDoubleDiamonds()
     {
         doubleDiamonds = true;
         Effects_Mechanics.ChangeStateOfEffectIcon(Effects_Mechanics.Effects.Double_Diamonds, true);
-        yield return new WaitForSeconds(15f);
+        yield return new WaitForSeconds(7.5f);
         doubleDiamonds = false;
         Effects_Mechanics.ChangeStateOfEffectIcon(Effects_Mechanics.Effects.Double_Diamonds, false);
     }

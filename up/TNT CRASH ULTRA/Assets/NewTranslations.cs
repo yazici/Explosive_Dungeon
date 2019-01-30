@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public enum typeOfThis
 {
     Image,
@@ -10,17 +11,31 @@ public enum typeOfThis
 public class NewTranslations : MonoBehaviour {
     private GameObject operatingWith;
     private string CurrentLanguage;
+    
     [SerializeField]private typeOfThis thisObjectType;
     [SerializeField]private Sprite[] SpritesForButtons_UA;
     [SerializeField]private Sprite[] SpritesForButtons_RU;
     [SerializeField]private Sprite[] SpritesForButtons_EN;
     [SerializeField]private string[] StringsForTexts;
+   
     void Start ()
     {
+        //SceneManager.sceneLoaded += OnSceneLoaded;
         operatingWith = this.gameObject;
+        Translate_Update();
+        NewTranslation_Control.TranslateAll.Subscribe(this.Translate_Update);
+	}
+    //void OnSceneLoaded(Scene s, LoadSceneMode m)
+    //{
+    ///    NewTranslation_Control.TranslateAll.Subscribe(this.Translate_Update);
+    //    Debug.Log("stop shto");
+    //}
+    private void Translate_Update()
+    {
+        
         UpdateCurrentLanguage();
         InitializeObject();
-	}
+    }
     private void UpdateCurrentLanguage()
     {
         if (PlayerPrefs.HasKey("CurrentLanguage"))
