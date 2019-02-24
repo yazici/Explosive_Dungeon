@@ -9,7 +9,7 @@ public class LoadingScreen2 : MonoBehaviour {
     }
     IEnumerator LoadAsync()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1.5f);
         AsyncOperation sceneLoad = SceneManager.LoadSceneAsync("LoadingScreen");
         if (sceneLoad.isDone)
         {

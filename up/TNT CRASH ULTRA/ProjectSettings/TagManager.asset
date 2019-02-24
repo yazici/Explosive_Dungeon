@@ -11,6 +11,8 @@ TagManager:
   - Chest
   - TNT
   - onLevelButtons
+  - Totem
+  - LevelRecords
   layers:
   - Default
   - TransparentFX

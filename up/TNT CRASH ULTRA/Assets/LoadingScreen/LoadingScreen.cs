@@ -7,7 +7,7 @@ public class LoadingScreen : MonoBehaviour {
         StartCoroutine(LoadAsync());
 	}
     IEnumerator LoadAsync(){
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(1.5f);
         AsyncOperation sceneLoad = SceneManager.LoadSceneAsync("GameMenu");
         if (sceneLoad.isDone){
             Debug.Log("Scene was loaded!");

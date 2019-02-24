@@ -12,7 +12,19 @@ public class Explosion_One : MonoBehaviour {
     }
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Player" && !MoveAndJump.Instance.Invisible && !MoveAndJump.Instance.Died && first) { MoveAndJump.Instance.StartCoroutine(MoveAndJump.Instance.KillPlayer()); first = false; }
+        if (col.gameObject.tag == "Player" &&
+             !MoveAndJump.Instance.Invisible &&
+              !MoveAndJump.Instance.Died && first) 
+                {
+                   MoveAndJump.Instance.StartCoroutine(MoveAndJump.Instance.KillPlayer()); 
+                   first = false; 
+                }
+                else if(col.gameObject.tag == "Totem" && first) 
+                {
+                    TotemScr.Instance.DamageTotem();
+                    print("Totem Damaged!");
+                    first = false;
+                }
     }
     IEnumerator Destroyer() {
         AudioManager.Instance.SoundPlay(6);

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 public class MenuHelper : MonoBehaviour {
     public  Camera[] Cameras;
     public  Canvas[] Canvases;
-    public static Text FindTextByName(string name) {Text founded_text = GameObject.Find(name).GetComponent<Text>(); return founded_text;}
+    public static TextMeshProUGUI FindTextByName(string name) { TextMeshProUGUI founded_text = null; if(GameObject.Find(name) != null){founded_text = GameObject.Find(name).GetComponent<TextMeshProUGUI>();} return founded_text;}
     void Start()
     {
         ChangeMenuTab(0);
@@ -19,5 +19,6 @@ public class MenuHelper : MonoBehaviour {
             Cameras[index].enabled = true;
             Canvases[index].enabled = true;
         }
+        print("sbfsh");
     }
 }

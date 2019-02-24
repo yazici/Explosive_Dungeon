@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using TMPro;
 public class MoveAndJump : MonoBehaviour {
+    public SaveRecord svRec = new SaveRecord();
     public static MoveAndJump Instance;
     private Image record_notification;
     [Header("Player")] // Игрок
@@ -30,7 +32,7 @@ public class MoveAndJump : MonoBehaviour {
     public float JumpForce = 0; // Сила прыжка
 
     bool pause;
-
+    private int LevelID;
 
     public GameObject[] canvases;
     private GameObject unPauseCounter;
@@ -38,6 +40,14 @@ public class MoveAndJump : MonoBehaviour {
     //private float init_MoveForce;
     private void Start()
     {
+        switch(SceneManager.GetActiveScene().name){
+            case "Level1": LevelID = 0; break;
+            case "Level2": LevelID = 1; break;
+            case "Level3": LevelID = 2; break;
+        }
+        if(!PlayerPrefs.HasKey("SavedRecord")) 
+            SaveAllData();
+        LoadAllData();
         Invoke("SetPause", 2.0f);
         AudioManager.Instance.InitializeSources();
         record_notification = GameObject.Find("Record_Notifications").GetComponent<Image>();
@@ -53,41 +63,33 @@ public class MoveAndJump : MonoBehaviour {
     {
         PlayerPrefs.SetInt("DiamondsCount", PlayerPrefs.GetInt("DiamondsCount") + DiamondSpawn.CurrentValueOfDiamonds);
         Died = true;
-        if (!PlayerPrefs.HasKey("BestScore"))
+        if (svRec.LevelsRecords[LevelID] <= DiamondSpawn.CurrentValueOfDiamonds)
         {
-            PlayerPrefs.SetInt("BestScore", DiamondSpawn.CurrentValueOfDiamonds);
+            svRec.LevelsRecords[LevelID] = DiamondSpawn.CurrentValueOfDiamonds;
             GameObject.Find("BestScore_Value").GetComponent<Text>().text = "" + DiamondSpawn.CurrentValueOfDiamonds;
             GameObject.Find("YourScore_Value").GetComponent<Text>().text = "" + DiamondSpawn.CurrentValueOfDiamonds;
             record_notification.enabled = true;
-            print("1");
-        }
-        else if (PlayerPrefs.GetInt("BestScore") <= DiamondSpawn.CurrentValueOfDiamonds)
+        }else
         {
-            PlayerPrefs.SetInt("BestScore", DiamondSpawn.CurrentValueOfDiamonds);
-            GameObject.Find("BestScore_Value").GetComponent<Text>().text = "" + DiamondSpawn.CurrentValueOfDiamonds;
-            GameObject.Find("YourScore_Value").GetComponent<Text>().text = "" + DiamondSpawn.CurrentValueOfDiamonds;
-            record_notification.enabled = true;
-            print("2");
-        }
-        else
-        {
-            GameObject.Find("BestScore_Value").GetComponent<Text>().text = "" + PlayerPrefs.GetInt("BestScore");
+            GameObject.Find("BestScore_Value").GetComponent<Text>().text = "" + svRec.LevelsRecords[LevelID];
             GameObject.Find("YourScore_Value").GetComponent<Text>().text = "" + DiamondSpawn.CurrentValueOfDiamonds;
             record_notification.enabled = false;
-            print("3");
         }
+
         if (!fast_die)
         {
             PlayerMainAnimator.Play("Player_die", 0);
             yield return new WaitForSeconds(2f);
             Destroy(Player.gameObject.GetComponent<SpriteRenderer>());
             yield return new WaitForSeconds(1f);
-            Time.timeScale = 0;
-        }
+            
+        }else{Destroy(Player.gameObject.GetComponent<SpriteRenderer>()); yield return new WaitForSeconds(1.5f);}
+        Time.timeScale = 0;
         Shake.GetComponent<CameraShake>().enabled = false;
         canvases[0].GetComponent<Canvas>().enabled = false;
         canvases[1].GetComponent<Canvas>().enabled = true;
         canvases[2].GetComponent<Canvas>().enabled = false;
+        SaveAllData();
     }
     public void Pause()
     {
@@ -107,7 +109,7 @@ public class MoveAndJump : MonoBehaviour {
     IEnumerator unPauseAction()
     {
         unPauseCounter.SetActive(true);
-        unPauseCounter.GetComponent<Text>().text = "3";
+        unPauseCounter.GetComponent<TextMeshProUGUI>().text = "3";
         canvases[0].GetComponent<Canvas>().enabled = true;
         canvases[1].GetComponent<Canvas>().enabled = false;
         canvases[2].GetComponent<Canvas>().enabled = false;
@@ -118,9 +120,9 @@ public class MoveAndJump : MonoBehaviour {
                 Buttons.GetComponent<EventTrigger>().enabled = false;
         }
         yield return new WaitForSecondsRealtime(0.667f);
-        unPauseCounter.GetComponent<Text>().text = "2";
+        unPauseCounter.GetComponent<TextMeshProUGUI>().text = "2";
         yield return new WaitForSecondsRealtime(0.667f);
-        unPauseCounter.GetComponent<Text>().text = "1";
+        unPauseCounter.GetComponent<TextMeshProUGUI>().text = "1";
         yield return new WaitForSecondsRealtime(0.667f);
         unPauseCounter.SetActive(false);
         foreach (GameObject Buttons in onLevelButtons)
@@ -150,9 +152,9 @@ public class MoveAndJump : MonoBehaviour {
     }
 
    
-    public void Update() // Каждый кадр (Зависит от FPS)
+    public void FixedUpdate() // Каждый кадр (Зависит от FPS)
     {
-        if (Died) { MoveForce = 0; } else if(!Died && speedboost) { MoveForce = 9; } else if (!Died && !speedboost) { MoveForce = 6; }
+        if (Died) { MoveForce = 0; } else if(!Died && speedboost) { MoveForce = 8; } else if (!Died && !speedboost) { MoveForce = 6; }
         onGround = Physics2D.OverlapCircle(GroundChecker.position, 0.1f, Ground); // Проверка на земле ли игрок
         PlayerPhysics.velocity = new Vector2(MoveForce * MoveAxis, PlayerPhysics.velocity.y); // Ходьба
         if (onGround && MoveAxis == 0 && !Died) { PlayerMainAnimator.SetInteger("State", 0); } // Анимация "Idle"
@@ -199,9 +201,28 @@ public class MoveAndJump : MonoBehaviour {
         Invisible = true;
         Effects_Mechanics.ChangeStateOfEffectIcon(Effects_Mechanics.Effects.Armor, true);
         this.gameObject.GetComponent<SpriteRenderer>().color = new Color32(255,255,255,255/2);
-        yield return new WaitForSeconds(15f); Invisible = false;
+        yield return new WaitForSeconds(11f); this.gameObject.GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
+        for(int i = 0; i!=4; i++){
+        yield return new WaitForSeconds(0.5f); this.gameObject.GetComponent<SpriteRenderer>().color = new Color32(255,255,255,255/2);
+        yield return new WaitForSeconds(0.5f); this.gameObject.GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
+        }
+        Invisible = false;
         this.gameObject.GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
         Effects_Mechanics.ChangeStateOfEffectIcon(Effects_Mechanics.Effects.Armor, false);
         Invisible = false;
     }
+    public void SaveAllData()
+    {
+        PlayerPrefs.SetString("SavedRecord", JsonUtility.ToJson(svRec));
+    }
+    public void LoadAllData()
+    {       
+        svRec = JsonUtility.FromJson<SaveRecord>(PlayerPrefs.GetString("SavedRecord"));
+        
+    }
+}
+
+public class SaveRecord 
+{
+    public int[] LevelsRecords = { 0, 0, 0 };
 }

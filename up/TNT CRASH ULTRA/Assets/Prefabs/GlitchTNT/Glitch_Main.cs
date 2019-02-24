@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Glitch_Main : MonoBehaviour {
-    private GameObject Spawner; // Ссылка на спавнеры
+    public GameObject Spawner; // Ссылка на спавнеры
     public GameObject TNTPrefab;
     public static Glitch_Main Instance;
     void Start()

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TNTinMenu : MonoBehaviour
 {
-    public GameObject tnt_prefab;
+    public GameObject[] tnt_prefab;
     private GameObject tnt_object;
     // Start is called before the first frame update
     void Start()
@@ -15,7 +15,7 @@ public class TNTinMenu : MonoBehaviour
     public IEnumerator MenuTNT()
     {
         gameObject.transform.position = new Vector3(Random.Range(-8.0f, 8.0f), gameObject.transform.position.y, gameObject.transform.position.z);
-        tnt_object = Instantiate(tnt_prefab, gameObject.transform.position, Quaternion.identity) as GameObject;
+        tnt_object = Instantiate(tnt_prefab[Random.Range(0,2)], gameObject.transform.position, Quaternion.identity) as GameObject;
         tnt_object.GetComponent<SpriteRenderer>().sortingLayerName = "Default";
         tnt_object.GetComponent<SpriteRenderer>().sortingOrder = -1;
         tnt_object.GetComponent<Rigidbody2D>().gravityScale = 0.45f;

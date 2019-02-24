@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using UnityEngine.SceneManagement;
 public enum typeOfThis
 {
@@ -67,9 +68,10 @@ public class NewTranslations : MonoBehaviour {
         {
             switch (PlayerPrefs.GetString("CurrentLanguage"))
             {
-                case "EN": this.gameObject.GetComponent<Text>().text = StringsForTexts[0]; break;
-                case "RU": this.gameObject.GetComponent<Text>().text = StringsForTexts[1]; break;
-                case "UA": this.gameObject.GetComponent<Text>().text = StringsForTexts[2]; break;
+                
+                case "EN": this.gameObject.GetComponent<TextMeshProUGUI>().SetText(StringsForTexts[0]); break;
+                case "RU": this.gameObject.GetComponent<TextMeshProUGUI>().SetText(StringsForTexts[1]); break;
+                case "UA": this.gameObject.GetComponent<TextMeshProUGUI>().SetText(StringsForTexts[2]); break;
                 default: Debug.Log("Ошибка инициализации перевода! Code: 666."); break;
             }
         }

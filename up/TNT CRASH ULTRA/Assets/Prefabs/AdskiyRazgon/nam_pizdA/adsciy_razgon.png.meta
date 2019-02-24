@@ -1,17 +1,12 @@
 fileFormatVersion: 2
-guid: df3c3827445187844b9f31ccc3f1d1d6
+guid: 4981fb233c9539d44b3dd4bd45d68941
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Plantss 1_0
-    21300002: Plantss 1_1
-    21300004: Plantss 1_2
-    21300006: Plantss 1_3
-    21300008: Plantss 1_4
-    21300010: Plantss 1_5
-    21300012: Plantss 1_6
-    21300014: Plantss 1_7
-    21300016: Plantss 1_8
-    21300018: Plantss 1_9
+    21300000: adsciy_razgon_0
+    21300002: adsciy_razgon_1
+    21300004: adsciy_razgon_2
+    21300006: adsciy_razgon_3
+    21300008: adsciy_razgon_4
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -73,7 +68,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -84,7 +79,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -95,7 +90,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -105,201 +100,101 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Plantss 1_0
+      name: adsciy_razgon_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 18
-        width: 18
-        height: 18
+        y: 0
+        width: 7
+        height: 7
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9150162879d5bed43a26814fc3b3660a
+      spriteID: 11720d4624d48ff4fa339b19b7b4d233
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Plantss 1_1
+      name: adsciy_razgon_1
       rect:
         serializedVersion: 2
-        x: 18
-        y: 18
-        width: 18
-        height: 18
+        x: 7
+        y: 0
+        width: 7
+        height: 7
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7931169b80599e8429a82e337be183ef
+      spriteID: 32467bbcc75c4344da0aa8058f19d30a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Plantss 1_2
+      name: adsciy_razgon_2
       rect:
         serializedVersion: 2
-        x: 36
-        y: 18
-        width: 18
-        height: 18
+        x: 14
+        y: 0
+        width: 7
+        height: 7
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 975f08b3d7254ba43bfec2f4bacc52a9
+      spriteID: 3d762ebc73506f846b3cc83557fad27f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Plantss 1_3
+      name: adsciy_razgon_3
       rect:
         serializedVersion: 2
-        x: 54
-        y: 18
-        width: 18
-        height: 18
+        x: 21
+        y: 0
+        width: 7
+        height: 7
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1069cca2d4bab0f4883edec45d57be31
+      spriteID: 3bb5758502747a04c939d2098ae9c68d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Plantss 1_4
+      name: adsciy_razgon_4
       rect:
         serializedVersion: 2
-        x: 72
-        y: 18
-        width: 18
-        height: 18
+        x: 28
+        y: 0
+        width: 7
+        height: 7
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68d475f7fca01a941ab8c83ac23a5531
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Plantss 1_5
-      rect:
-        serializedVersion: 2
-        x: 90
-        y: 18
-        width: 18
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dc4c015c07c050a4085d7e099e749f70
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Plantss 1_6
-      rect:
-        serializedVersion: 2
-        x: 108
-        y: 18
-        width: 18
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 668fb7d9656ad1a4488e84636f62091d
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Plantss 1_7
-      rect:
-        serializedVersion: 2
-        x: 126
-        y: 18
-        width: 18
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 73a0c83389a82af43aef9f118852e862
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Plantss 1_8
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 18
-        width: 18
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d9f2ea9e0f8669c4dacdaebdbaf50287
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Plantss 1_9
-      rect:
-        serializedVersion: 2
-        x: 164
-        y: 18
-        width: 16
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 74541a441183a1045866c56a722cf8a9
+      spriteID: 1df9bf7fc770fa543b20bc3b6d68745f
       vertices: []
       indices: 
       edges: []
@@ -307,7 +202,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 756b8e222092e1142aec18a7b33c21d5
+    spriteID: 7ecc5ed634e771b4a9df84f04d757f01
     vertices: []
     indices: 
     edges: []
