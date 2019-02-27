@@ -18,8 +18,7 @@ public class FishOne : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         if(col.name == "Player"){
-            print("Hello Madafaka");
-            MoveAndJump.Instance.StartCoroutine(MoveAndJump.Instance.KillPlayer());
+            Player.Instance.StartCoroutine(Player.Instance.TryToKillPlayer());
         }
     }
 }

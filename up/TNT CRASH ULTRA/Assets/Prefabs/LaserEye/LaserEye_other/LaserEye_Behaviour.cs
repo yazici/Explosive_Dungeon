@@ -19,7 +19,7 @@ public class LaserEye_Behaviour : MonoBehaviour
     private void FixedUpdate()
     {
         if (DiamondSpawn.CurrentValueOfDiamonds >= 10 && first) { first = false; StartCoroutine(EnemySpawn()); }
-        if (isExplosion && !MoveAndJump.Instance.Died) { if (LaserEye_Trigger.isPlayerOnTriger() && !MoveAndJump.Instance.Invisible || LaserEYETRIGGER2.isPlayerOnTriger() && !MoveAndJump.Instance.Invisible) { MoveAndJump.Instance.StartCoroutine(MoveAndJump.Instance.KillPlayer()); } }
+        if (isExplosion && !Player.Instance.Died) { if (LaserEye_Trigger.isPlayerOnTriger() && !Player.Instance.Invisible || LaserEYETRIGGER2.isPlayerOnTriger() && !Player.Instance.Invisible) { Player.Instance.StartCoroutine(Player.Instance.TryToKillPlayer()); } }
         if (ClonedEnemy != null && isExplosion == false)
         {
             ClonedEnemy.transform.position = Vector2.MoveTowards(ClonedEnemy.transform.position, TargetPlayer.transform.position, 17.5f / 10 * Time.deltaTime);

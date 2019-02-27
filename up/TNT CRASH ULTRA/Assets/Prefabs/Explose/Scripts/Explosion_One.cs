@@ -13,10 +13,10 @@ public class Explosion_One : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "Player" &&
-             !MoveAndJump.Instance.Invisible &&
-              !MoveAndJump.Instance.Died && first) 
+             !Player.Instance.Invisible &&
+              !Player.Instance.Died && first) 
                 {
-                   MoveAndJump.Instance.StartCoroutine(MoveAndJump.Instance.KillPlayer()); 
+                   Player.Instance.StartCoroutine(Player.Instance.TryToKillPlayer()); 
                    first = false; 
                 }
                 else if(col.gameObject.tag == "Totem" && first) 

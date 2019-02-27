@@ -13,6 +13,7 @@ TagManager:
   - onLevelButtons
   - Totem
   - LevelRecords
+  - SpawnerOfCrabs
   layers:
   - Default
   - TransparentFX
@@ -28,8 +29,8 @@ TagManager:
   - Diamond
   - Ceiling
   - Trigger
-  - 
-  - 
+  - Crab
+  - Crab2
   - 
   - 
   - 

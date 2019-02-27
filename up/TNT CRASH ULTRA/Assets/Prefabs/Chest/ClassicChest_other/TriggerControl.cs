@@ -19,7 +19,7 @@ public class TriggerControl : MonoBehaviour {
                     Debug.Log("Вы подобрали алмазный сундук!");
                     break;
                 case Chest.Rainbow:
-                    MoveAndJump.Instance.StartCoroutine("SetInvisible");
+                    Player.Instance.StartCoroutine("SetInvisible");
                     Debug.Log("Вы подобрали радужный сундук!");
                     break;
                 case Chest.Glitch:
@@ -28,7 +28,7 @@ public class TriggerControl : MonoBehaviour {
                     break;
                 default: // Chest.Classic
                     Debug.Log("Вы подобрали классический сундук!");
-                    MoveAndJump.Instance.StartCoroutine("OffSpeedboost");
+                    Player.Instance.StartCoroutine("OffSpeedboost");
                     break;
             }
             if (gameObject.transform.parent.gameObject != null) { Destroy(gameObject.transform.parent.gameObject); }

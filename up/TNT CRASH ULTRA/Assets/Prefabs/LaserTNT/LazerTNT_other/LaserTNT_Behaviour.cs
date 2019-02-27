@@ -13,7 +13,7 @@ public class LaserTNT_Behaviour : MonoBehaviour
     public void Update()
     {
         if (DiamondSpawn.CurrentValueOfDiamonds >= 10 && first) { first = false; StartCoroutine(TNT_SPAWN()); }
-        if (inExplosion) { if (LaserTNT_Checker.isPlayerOnTriger() && !MoveAndJump.Instance.Invisible && !MoveAndJump.Instance.Died) { MoveAndJump.Instance.StartCoroutine(MoveAndJump.Instance.KillPlayer()); } }
+        if (inExplosion) { if (LaserTNT_Checker.isPlayerOnTriger() && !Player.Instance.Invisible && !Player.Instance.Died) { Player.Instance.StartCoroutine(Player.Instance.TryToKillPlayer()); } }
     }
     public IEnumerator TNT_SPAWN()
     {

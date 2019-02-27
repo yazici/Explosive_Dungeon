@@ -11,7 +11,6 @@ public class EyeMain : MonoBehaviour {
         
         Spawners = GameObject.FindGameObjectsWithTag("SpawnerOfEnemy");
         StartCoroutine("SpawnEye");
-        print(Spawners[0].name);
     }
     IEnumerator SpawnEye()
     {
@@ -29,7 +28,7 @@ public class EyeMain : MonoBehaviour {
         if(SceneManager.GetActiveScene().name == "Level3")
             yield return new WaitForSeconds(3f * spawnSpeed);
         else   
-            yield return new WaitForSeconds(8f * spawnSpeed); 
+            yield return new WaitForSeconds(6f * spawnSpeed); 
         if(spawnSpeed > 1)
             spawnSpeed = spawnSpeed - 0.25f;    
         StartCoroutine("SpawnEye");

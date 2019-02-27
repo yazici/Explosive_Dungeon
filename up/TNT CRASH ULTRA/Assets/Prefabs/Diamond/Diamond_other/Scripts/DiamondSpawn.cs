@@ -30,7 +30,7 @@ public class DiamondSpawn : MonoBehaviour {
         }
     }
     public static void DestroyDiamond() { Destroy(DiamondCloned); AudioManager.Instance.SoundPlay(4); }
-    public void TakeDiamondLocal(){if(!MoveAndJump.Instance.Died){TakeDiamond(); }}
+    public void TakeDiamondLocal(){if(!Player.Instance.Died){TakeDiamond(); }}
     public static void TakeDiamond() { if (doubleDiamonds) { CurrentValueOfDiamonds = CurrentValueOfDiamonds + 2; } else { CurrentValueOfDiamonds++; } }
     IEnumerator SetDoubleDiamonds()
     {

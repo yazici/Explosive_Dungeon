@@ -2116,7 +2116,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1572623210}
-        m_MethodName: StartRespawning
+        m_MethodName: RespawnPlayer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6401,6 +6401,11 @@ PrefabInstance:
       propertyPath: canvases.Array.data[2]
       value: 
       objectReference: {fileID: 1576268470}
+    - target: {fileID: 114140920411410272, guid: 803d74253f020324f91b08a409c7bf50,
+        type: 3}
+      propertyPath: Player_Transform
+      value: 
+      objectReference: {fileID: 1305628229}
     - target: {fileID: 4584275947331906, guid: 803d74253f020324f91b08a409c7bf50, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.82
@@ -6499,6 +6504,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 803d74253f020324f91b08a409c7bf50, type: 3}
+--- !u!4 &1305628229 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4584275947331906, guid: 803d74253f020324f91b08a409c7bf50,
+    type: 3}
+  m_PrefabInstance: {fileID: 1305628228}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1306981642
 GameObject:
   m_ObjectHideFlags: 0

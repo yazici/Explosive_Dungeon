@@ -5,12 +5,12 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using TMPro;
-public class MoveAndJump : MonoBehaviour {
+public class Player : MonoBehaviour {
     public SaveRecord svRec = new SaveRecord();
-    public static MoveAndJump Instance;
+    [HideInInspector]public static Player Instance;
     private Image record_notification;
     [Header("Player")] // Игрок
-    public Transform Player; // Координаты игрока
+    public Transform Player_Transform; // Координаты игрока
     public bool Died; // Мертв ли игрок?
     public bool Invisible; // Невидимость
     public GameObject Shake;
@@ -37,7 +37,6 @@ public class MoveAndJump : MonoBehaviour {
     public GameObject[] canvases;
     private GameObject unPauseCounter;
     private GameObject[] onLevelButtons;
-    //private float init_MoveForce;
     private void Start()
     {
         switch(SceneManager.GetActiveScene().name){
@@ -59,7 +58,7 @@ public class MoveAndJump : MonoBehaviour {
        // init_MoveForce = MoveForce;
     }
     void SetPause() { pause = true; }
-    public IEnumerator KillPlayer(bool fast_die=false)
+    public IEnumerator TryToKillPlayer(bool fast_die = false)
     {
         PlayerPrefs.SetInt("DiamondsCount", PlayerPrefs.GetInt("DiamondsCount") + DiamondSpawn.CurrentValueOfDiamonds);
         Died = true;
@@ -80,10 +79,10 @@ public class MoveAndJump : MonoBehaviour {
         {
             PlayerMainAnimator.Play("Player_die", 0);
             yield return new WaitForSeconds(2f);
-            Destroy(Player.gameObject.GetComponent<SpriteRenderer>());
+            Destroy(Player_Transform.gameObject.GetComponent<SpriteRenderer>());
             yield return new WaitForSeconds(1f);
             
-        }else{Destroy(Player.gameObject.GetComponent<SpriteRenderer>()); yield return new WaitForSeconds(1.5f);}
+        }else{Destroy(Player_Transform.gameObject.GetComponent<SpriteRenderer>()); yield return new WaitForSeconds(1.5f);}
         Time.timeScale = 0;
         Shake.GetComponent<CameraShake>().enabled = false;
         canvases[0].GetComponent<Canvas>().enabled = false;
@@ -133,9 +132,10 @@ public class MoveAndJump : MonoBehaviour {
         }
         Time.timeScale = 1;
     }
-    public void StartRespawning() { StartCoroutine(Respawn()); Time.timeScale = 1; }
+    public void RespawnPlayer() { StartCoroutine(Respawn()); Time.timeScale = 1; }
     public IEnumerator Respawn()
     {
+        Time.timeScale = 1;
         record_notification.enabled = false;
         DiamondSpawn.CurrentValueOfDiamonds = 0;
         DiamondSpawn.doubleDiamonds = false;
@@ -168,6 +168,7 @@ public class MoveAndJump : MonoBehaviour {
         {
             MoveAxis = Axis; // Получение направления
         }
+        
     }
     public void Jump() // Прыжок
     {
@@ -183,9 +184,9 @@ public class MoveAndJump : MonoBehaviour {
             if (!Died) // Если игрок жив
             {
                 facingRight = right; // Сменить переменную направления
-                Vector3 theScale = Player.localScale; // Текущее направление
+                Vector3 theScale = Player_Transform.localScale; // Текущее направление
                 theScale.x = theScale.x * -1; // Смена текущего направления на новое
-                Player.localScale = theScale; // Замена направления
+                Player_Transform.localScale = theScale; // Замена направления
             }
         }
     }

@@ -32,7 +32,7 @@ public class LevelUI : MonoBehaviour {
     public void TimeScale(int Scale) {Time.timeScale = Scale;}
     public void ExitFromPause()
     {
-        if (!MoveAndJump.Instance.Died) { PlayerPrefs.SetInt("DiamondsCount", PlayerPrefs.GetInt("DiamondsCount") + DiamondSpawn.CurrentValueOfDiamonds); }
+        if (!Player.Instance.Died) { PlayerPrefs.SetInt("DiamondsCount", PlayerPrefs.GetInt("DiamondsCount") + DiamondSpawn.CurrentValueOfDiamonds); }
         DiamondSpawn.CurrentValueOfDiamonds = 0;
         DiamondSpawn.doubleDiamonds = false;
         TimeScale(1);

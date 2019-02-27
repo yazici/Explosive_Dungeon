@@ -10,7 +10,7 @@ public class TotemScr : MonoBehaviour
     public Sprite[] totem_sprite;
     public int TotemHealth = 2;
     
-    void PlayerKill(){MoveAndJump.Instance.StartCoroutine(MoveAndJump.Instance.KillPlayer());}
+    void PlayerKill(){Player.Instance.StartCoroutine(Player.Instance.TryToKillPlayer());}
     void Start()
     {
         Instance = this;
