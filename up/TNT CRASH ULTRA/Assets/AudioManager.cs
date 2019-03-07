@@ -1,52 +1,71 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
-    public bool Audio = true, Music = true;
+    public SpriteState[] MusicState;
+    public SpriteState[] AudioState;
+    public Button[] MusicButtons;
+    //public bool Audio = true, Music = true;
     public AudioClip[] SoundsBlips;
-    private void Start()
+    private void Awake()
     {
+        if(!PlayerPrefs.HasKey("Music") || !PlayerPrefs.HasKey("Audio")){
+            PlayerPrefs.SetString("Music", "true");
+            PlayerPrefs.SetString("Audio", "true");
+        }
+        
+        Debug.Log(PlayerPrefs.GetString("Music"));
         Instance = this;
-        DontDestroyOnLoad(this.gameObject);
+        MusicButtons[1].spriteState = AudioState[PlayerPrefs.GetString("Audio") == "true" ? 0 : 1];
+        MusicButtons[1].gameObject.GetComponent<Image>().sprite = AudioState[PlayerPrefs.GetString("Audio") == "true" ? 0 : 1].highlightedSprite;
+        MusicButtons[0].spriteState = MusicState[PlayerPrefs.GetString("Music") == "true" ? 0 : 1];
+        MusicButtons[0].gameObject.GetComponent<Image>().sprite = MusicState[PlayerPrefs.GetString("Music") == "true" ? 0 : 1].highlightedSprite;
+        InitializeSources();
     }
     public void SoundPlay(int bl)
     {
-        if (Audio)
+        if (PlayerPrefs.GetString("Audio") == "true")
         {            
             GameObject.Find("AudioSource").GetComponent<AudioSource>().PlayOneShot(SoundsBlips[bl-1]);
         }
     }
     public void InitializeSources()
     {
-        if (Music)
+        if (PlayerPrefs.GetString("Music") == "true")
             GameObject.Find("MusicSource").GetComponent<AudioSource>().Play();
         else
             GameObject.Find("MusicSource").GetComponent<AudioSource>().Stop();
+        
         
     }
     public void ChangeAudio()
     {
         GameObject.Find("AudioSource").GetComponent<AudioSource>().PlayOneShot(SoundsBlips[1]);
-        if (Audio)
-            Audio = false;
+        if (PlayerPrefs.GetString("Audio") == "true")
+            PlayerPrefs.SetString("Audio", "false");
         else
-            Audio = true;
+            PlayerPrefs.SetString("Audio", "true");
+        MusicButtons[1].spriteState = AudioState[PlayerPrefs.GetString("Audio") == "true" ? 0 : 1];
+        MusicButtons[1].gameObject.GetComponent<Image>().sprite = AudioState[PlayerPrefs.GetString("Audio") == "true" ? 0 : 1].highlightedSprite;
     }
     public void ChangeMusic()
     {
         SoundPlay(2);
-        if (Music)
+        if (PlayerPrefs.GetString("Music") == "true")
         {
-            Music = false;
+            PlayerPrefs.SetString("Music", "false");
             GameObject.Find("MusicSource").GetComponent<AudioSource>().Stop();
         }
         else
         {
-            Music = true;
+            PlayerPrefs.SetString("Music", "true");
             GameObject.Find("MusicSource").GetComponent<AudioSource>().Play();
         }
+        MusicButtons[0].spriteState = MusicState[PlayerPrefs.GetString("Music") == "true" ? 0 : 1];
+        MusicButtons[0].gameObject.GetComponent<Image>().sprite = MusicState[PlayerPrefs.GetString("Music") == "true" ? 0 : 1].highlightedSprite;
+        Debug.Log(PlayerPrefs.GetString("Music"));
     }
 }

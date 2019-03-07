@@ -9,6 +9,7 @@ public class NewTranslation_Control : MonoBehaviour
     private void Start()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
+        DontDestroyOnLoad(this.gameObject);
     }
     private void OnSceneLoaded(Scene s, LoadSceneMode m)
     {

@@ -15,7 +15,7 @@ public class CrabSpawner : MonoBehaviour {
     }
     IEnumerator SpawnCrab()
     {
-        yield return new WaitForSeconds(5f);  
+        yield return new WaitForSeconds(30f);  
         int r = Random.RandomRange(0,2);
         bool MoveDirection = r == 0 ? true : false;
         if(MoveDirection)

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TriggerControl : MonoBehaviour {
     public enum Chest { Classic, Diamond, Rainbow, Glitch }
-   
+    
     public Chest typeOfThisChest;
     
     private void OnTriggerEnter2D(Collider2D collision)
@@ -15,11 +15,15 @@ public class TriggerControl : MonoBehaviour {
             switch (typeOfThisChest)
             {
                 case Chest.Diamond:
-                    DiamondSpawn.Instance.StartCoroutine("SetDoubleDiamonds");
+                if(ClassicChest.DiamondCoroutine != null)
+                        ClassicChest.Instance.StopCoroutine(ClassicChest.DiamondCoroutine);
+                    ClassicChest.DiamondCoroutine = DiamondSpawn.Instance.StartCoroutine("SetDoubleDiamonds");
                     Debug.Log("Вы подобрали алмазный сундук!");
                     break;
                 case Chest.Rainbow:
-                    Player.Instance.StartCoroutine("SetInvisible");
+                    if(ClassicChest.InvisibleCoroutine != null)
+                        ClassicChest.Instance.StopCoroutine(ClassicChest.InvisibleCoroutine);
+                    ClassicChest.InvisibleCoroutine = Player.Instance.StartCoroutine("SetInvisible");
                     Debug.Log("Вы подобрали радужный сундук!");
                     break;
                 case Chest.Glitch:
@@ -27,8 +31,12 @@ public class TriggerControl : MonoBehaviour {
                     Debug.Log("Вы подобрали глитч-сундук!");
                     break;
                 default: // Chest.Classic
+                if(ClassicChest.SpeedBoostCoroutine != null){
+                    ClassicChest.Instance.StopCoroutine(ClassicChest.SpeedBoostCoroutine);
+                    print("ebaniy shashlik");
+                    }
                     Debug.Log("Вы подобрали классический сундук!");
-                    Player.Instance.StartCoroutine("OffSpeedboost");
+                    ClassicChest.SpeedBoostCoroutine = Player.Instance.StartCoroutine("OffSpeedboost");
                     break;
             }
             if (gameObject.transform.parent.gameObject != null) { Destroy(gameObject.transform.parent.gameObject); }

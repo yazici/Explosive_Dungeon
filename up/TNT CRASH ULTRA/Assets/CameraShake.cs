@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraShake : MonoBehaviour {
-    public float shake_power = 0.7f;
-    public float duration = 1.0f;
+    public float shake_power = 0.2f;
+    public float duration = 0.7f;
     public Transform camera;
-    public float slow_down_amount = 1.0f;
+    public float slow_down_amount = 0.7f;
     public static bool Should_Shake = false;
 
     Vector3 startPosition;

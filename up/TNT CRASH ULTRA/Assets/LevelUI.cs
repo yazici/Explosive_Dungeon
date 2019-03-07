@@ -17,9 +17,9 @@ public class LevelUI : MonoBehaviour {
     {
 
         //Audio = GameObject.FindGameObjectsWithTag("AudioSources");
-        Music = GameObject.Find("MusicSource").GetComponent<AudioSource>();
-        if (!PlayerPrefs.HasKey("Audio") || !PlayerPrefs.HasKey("Audio"))
-            PlayerPrefs.SetString("Audio", "true"); PlayerPrefs.SetString("Music", "true");
+        //Music = GameObject.Find("MusicSource").GetComponent<AudioSource>();
+       // if (!PlayerPrefs.HasKey("Audio") || !PlayerPrefs.HasKey("Audio"))
+       //     PlayerPrefs.SetString("Audio", "true"); PlayerPrefs.SetString("Music", "true");
     }
     public void ChangeWindow(int Window) {
             for (int i = 0; i < Windowses.Length; i++) {

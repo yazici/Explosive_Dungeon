@@ -17,7 +17,9 @@ public class FishOne : MonoBehaviour
     // Update is called once per frame
     void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.name == "Player"){
+        if(col.name == "Player" 
+            && !Player.Instance.Invisible 
+                && !Player.Instance.Died){
             Player.Instance.StartCoroutine(Player.Instance.TryToKillPlayer());
         }
     }

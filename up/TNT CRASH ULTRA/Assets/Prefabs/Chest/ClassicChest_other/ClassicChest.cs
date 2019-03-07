@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class ClassicChest : MonoBehaviour
 {
+    public static ClassicChest Instance;
     public GameObject[] ChestPrefabs; // Префабы сундуков
     public Transform Spawner;
+    public static Coroutine DiamondCoroutine, InvisibleCoroutine, SpeedBoostCoroutine;
     public static GameObject ClonedChest; // 
     private void Start()
     {
+        Instance = this;
         InvokeRepeating("SpawnChest", 4f, 20f);
     }
     public enum Chest { Classic, Diamond, Rainbow, Glitch }
