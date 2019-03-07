@@ -14,15 +14,12 @@ public class DiamondSpawn : MonoBehaviour {
     private void Start()
     {
         Instance = this;
-        if(SceneManager.GetActiveScene().name == "Level3")
-        {
-            InvokeRepeating("TakeDiamondLocal", 1f, 1f);
-        }
+        
     }
+    
     private void Update()
     {
-        if (DiamondCloned == null &&
-                SceneManager.GetActiveScene().name != "Level3")
+        if (DiamondCloned == null)
                 {
             DiamondSpawner.position = new Vector2(Random.Range(-8.0f, 8.0f), DiamondSpawner.position.y);
             DiamondCloned = Instantiate(DiamondPrefab, DiamondSpawner.transform.position, Quaternion.identity) as GameObject;

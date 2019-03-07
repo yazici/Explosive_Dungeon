@@ -1700,6 +1700,7 @@ GameObject:
   - component: {fileID: 356250270}
   - component: {fileID: 356250272}
   - component: {fileID: 356250271}
+  - component: {fileID: 356250273}
   m_Layer: 0
   m_Name: Level_2_TEXT
   m_TagString: Untagged
@@ -1850,6 +1851,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 356250269}
   m_CullTransparentMesh: 0
+--- !u!114 &356250273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356250269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f109250ac4b2524d8cb358563cc6877, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisObjectType: 1
+  SpritesForButtons_UA: []
+  SpritesForButtons_RU: []
+  SpritesForButtons_EN: []
+  StringsForTexts:
+  - CAVE 2
+  - "\u041F\u0415\u0429\u0415\u0420\u0410 2"
+  - "\u041F\u0415\u0427\u0415\u0420\u0410 2"
 --- !u!1 &393204023
 GameObject:
   m_ObjectHideFlags: 0
@@ -2215,6 +2236,7 @@ GameObject:
   - component: {fileID: 516109129}
   - component: {fileID: 516109131}
   - component: {fileID: 516109130}
+  - component: {fileID: 516109132}
   m_Layer: 0
   m_Name: Level_1_TEXT
   m_TagString: Untagged
@@ -2365,6 +2387,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 516109128}
   m_CullTransparentMesh: 0
+--- !u!114 &516109132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516109128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f109250ac4b2524d8cb358563cc6877, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisObjectType: 1
+  SpritesForButtons_UA: []
+  SpritesForButtons_RU: []
+  SpritesForButtons_EN: []
+  StringsForTexts:
+  - CAVE 1
+  - "\u041F\u0415\u0429\u0415\u0420\u0410 1"
+  - "\u041F\u0415\u0427\u0415\u0420\u0410 1"
 --- !u!1 &533082487
 GameObject:
   m_ObjectHideFlags: 0
@@ -5683,6 +5725,7 @@ GameObject:
   - component: {fileID: 1455692866}
   - component: {fileID: 1455692868}
   - component: {fileID: 1455692867}
+  - component: {fileID: 1455692869}
   m_Layer: 0
   m_Name: Level_3_TEXT
   m_TagString: Untagged
@@ -5833,6 +5876,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1455692865}
   m_CullTransparentMesh: 0
+--- !u!114 &1455692869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455692865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f109250ac4b2524d8cb358563cc6877, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisObjectType: 1
+  SpritesForButtons_UA: []
+  SpritesForButtons_RU: []
+  SpritesForButtons_EN: []
+  StringsForTexts:
+  - CAVE 3
+  - "\u041F\u0415\u0429\u0415\u0420\u0410 3"
+  - "\u041F\u0415\u0427\u0415\u0420\u0410 3"
 --- !u!1 &1458844019
 GameObject:
   m_ObjectHideFlags: 0

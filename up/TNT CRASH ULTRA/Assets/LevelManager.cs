@@ -71,23 +71,23 @@ public class LevelManager : MonoBehaviour {
         {
             if(indexOfCurLevel == 0){
                     switch(PlayerPrefs.GetString("CurrentLanguage")){
-                    case "UA": returned = "ЗБИРАЙТЕ АЛМАЗИ ТА ТIКАЙТЕ ВIД МОНСТРIВ ТА ВИБУХIВ"; break;
+                    case "UA": returned = "ЗБИРАЙТЕ АЛМАЗИ ТА ТIКАЙТЕ ВIД МОНСТРIВ I ВИБУХIВ"; break;
                     case "RU": returned = "СОБИРАЙТЕ АЛМАЗЫ И УБЕГАЙТЕ ОТ МОНСТРОВ И ВЗРЫВОВ"; break;
                     case "EN": returned = "COLLECT DIAMONDS AND RUN AWAY FROM MONSTERS AND EXPLOSIONS"; break;
                 }
             }
             if(indexOfCurLevel == 1){
                     switch(PlayerPrefs.GetString("CurrentLanguage")){
-                    case "UA": returned = "Переведи мене, Влад."; break;
-                    case "RU": returned = "Переведи меня, Сладкий."; break;
-                    case "EN": returned = "Translate me, Vlad."; break;
+                    case "UA": returned = "ОСТЕРIГАЙТЕСЬ РIЧКОВИХ МОНСТРIВ!"; break;
+                    case "RU": returned = "ОСТЕРЕГАЙТЕСЬ РЕЧНЫХ МОНСТРОВ!"; break;
+                    case "EN": returned = "BEWARE OF RIVER MONSTERS!"; break;
                 }
             }
             if(indexOfCurLevel == 2){
                     switch(PlayerPrefs.GetString("CurrentLanguage")){
-                    case "UA": returned = "ЗАХИЩАЙТЕ ТОТЕМ ВIД МОНСТРIВ. КОЖНУ СЕКУНДУ ВИ ОТРИМУЄТЕ ОДИН АЛМАЗ"; break;
-                    case "RU": returned = "ЗАЩИЩАЙТЕ ТОТЕМ ОТ МОНСТРОВ. КАЖДУЮ СЕКУНДУ ВЫ ПОЛУЧАЕТЕ ОДИН АМЛАЗ"; break;
-                    case "EN": returned = "PROTECT TOTEM FROM MONSTERS. EVERY SECOND YOU COLLECT ONE DIAMOND"; break;
+                    case "UA": returned = "ЗАХИЩАЙТЕ ТОТЕМ ВIД МОНСТРIВ."; break;
+                    case "RU": returned = "ЗАЩИЩАЙТЕ ТОТЕМ ОТ МОНСТРОВ."; break;
+                    case "EN": returned = "PROTECT TOTEM FROM MONSTERS."; break;
                 }
             }
         }
