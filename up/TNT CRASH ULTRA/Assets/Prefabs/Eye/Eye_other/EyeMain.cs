@@ -28,8 +28,8 @@ public class EyeMain : MonoBehaviour {
         if(SceneManager.GetActiveScene().name == "Level3")
             yield return new WaitForSeconds(3f * spawnSpeed);
         else   
-            yield return new WaitForSeconds(6f * spawnSpeed); 
-        if(spawnSpeed > 1)
+            yield return new WaitForSeconds(6f * spawnSpeed-0.5f); 
+        if(spawnSpeed > 2f)
             spawnSpeed = spawnSpeed - 0.25f;    
         StartCoroutine("SpawnEye");
 

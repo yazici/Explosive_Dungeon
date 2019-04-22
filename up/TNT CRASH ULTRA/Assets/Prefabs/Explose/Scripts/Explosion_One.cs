@@ -17,6 +17,7 @@ public class Explosion_One : MonoBehaviour {
               !Player.Instance.Died && first) 
                 {
                    Player.Instance.StartCoroutine(Player.Instance.TryToKillPlayer()); 
+                   Achievements.AchievementSave.DiedByExplosion++;
                    first = false; 
                 }
                 else if(col.gameObject.tag == "Totem" && first) 

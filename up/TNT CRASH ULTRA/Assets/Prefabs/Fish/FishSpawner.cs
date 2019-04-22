@@ -5,7 +5,8 @@ using UnityEngine;
 public class FishSpawner : MonoBehaviour
 {
     public GameObject Fish;
-    public Transform Spawner;
+    public float FishSpawnerMultiplier=3.0f;
+    public Transform[] Spawners;
     void Start()
     {
         StartCoroutine(SpawnFish());
@@ -14,12 +15,10 @@ public class FishSpawner : MonoBehaviour
     // Update is called once per frame
     IEnumerator SpawnFish()
     {
-        print("privetik");
-        int r = Random.Range(0,2);
-        Vector3 _spawnerPos = r == 0 ? new Vector3(-3.0f, Spawner.position.y, Spawner.position.z) : new Vector3(3.0f, Spawner.position.y, Spawner.position.z);
-        Spawner.position = _spawnerPos;
-        Instantiate (Fish, Spawner.position, Quaternion.identity);
-        yield return new WaitForSeconds(5.0f);
+        yield return new WaitForSeconds(3.0f*FishSpawnerMultiplier);
+        Instantiate (Fish, Spawners[Random.Range(0, Spawners.Length)].position, Quaternion.identity);
+        if(FishSpawnerMultiplier != 1f)
+            FishSpawnerMultiplier -= 0.25f;
         StartCoroutine(SpawnFish());
     }
 }

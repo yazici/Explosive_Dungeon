@@ -19,9 +19,9 @@ public class ClassicChest : MonoBehaviour
     {
         int chance = Random.Range(0, 101);
         Chest returned;
-        if (chance <= 50)
+        if (chance <= 60)
         { returned = Chest.Classic; }
-        else if (chance <= 80 && chance > 50)
+        else if (chance <= 80 && chance > 60)
         { returned = Chest.Diamond; }
         else if (chance <= 95 && chance > 80)
         { returned = Chest.Rainbow; }

@@ -4,7 +4,7 @@ using UnityEngine;
 //==============================
 // Hello! It is the script for one lonely crab, like me.
 // He dont have family, but he have very good friends.
-// Please, dont say me about 'govnokod', I know. At this time I 'try' to learn OOP.
+// Please, dont say me about 'govnokod', I know. At this time I 'try' to learn OOP. 25.03.2019
 //==============================
 public class Crab_One : MonoBehaviour
 {

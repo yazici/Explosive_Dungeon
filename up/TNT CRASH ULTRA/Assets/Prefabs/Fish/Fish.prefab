@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8398072163973294042}
   - component: {fileID: 1340120560847154916}
   - component: {fileID: 8390499989133955878}
+  - component: {fileID: 5467486265865245362}
   m_Layer: 0
   m_Name: Fish
   m_TagString: Untagged
@@ -27,13 +28,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3379870918120805925}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 6, y: 6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6104968020130685469
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -71,9 +72,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1c124ea24bb54bb4796e3ceb0c6e5c70, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b96e36c4f5f95cf41bba59521b9d00b3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.18, y: 0.08}
@@ -133,7 +134,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.18, y: 0.08}
+    oldSize: {x: 0.14, y: 0.14}
     newSize: {x: 0.18, y: 0.08}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -142,3 +143,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.18, y: 0.08}
   m_EdgeRadius: 0
+--- !u!95 &5467486265865245362
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3379870918120805925}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d5da87d5c58529244ba2fe52cd3ecd59, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

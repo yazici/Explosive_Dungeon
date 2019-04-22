@@ -60,6 +60,15 @@ TagManager:
   - name: Player
     uniqueID: 343498963
     locked: 0
+  - name: Fish
+    uniqueID: 1409979705
+    locked: 0
+  - name: Bridge
+    uniqueID: 1042012367
+    locked: 0
+  - name: Crab
+    uniqueID: 962220547
+    locked: 0
   - name: Chest
     uniqueID: 3926734947
     locked: 0

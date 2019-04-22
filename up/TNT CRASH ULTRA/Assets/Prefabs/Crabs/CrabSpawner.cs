@@ -6,6 +6,8 @@ public class CrabSpawner : MonoBehaviour {
     private GameObject[] Spawners; // Ссылка на спавнеры
     public GameObject CrabPrefab;
     public GameObject[] ExclamationMark;
+    public AudioSource MusicSource;
+    public AudioClip[] MusicAudioClip;
     void Start () 
     {        
         Spawners = GameObject.FindGameObjectsWithTag("SpawnerOfCrabs");
@@ -15,7 +17,7 @@ public class CrabSpawner : MonoBehaviour {
     }
     IEnumerator SpawnCrab()
     {
-        yield return new WaitForSeconds(30f);  
+        yield return new WaitForSeconds(70f);
         int r = Random.RandomRange(0,2);
         bool MoveDirection = r == 0 ? true : false;
         if(MoveDirection)
@@ -23,6 +25,18 @@ public class CrabSpawner : MonoBehaviour {
         else
             ExclamationMark[0].SetActive(true);
         yield return new WaitForSeconds(5);
+        if(PlayerPrefs.GetString("Music") == "true")
+        while(MusicSource.volume != 0){
+            MusicSource.volume-=0.1f;
+            yield return new WaitForSeconds(0.35f);
+        }
+        MusicSource.clip = MusicAudioClip[1];
+            MusicSource.Play();
+        if(PlayerPrefs.GetString("Music") == "true")
+            while(MusicSource.volume != 0.5){
+                MusicSource.volume+=0.1f;
+                yield return new WaitForSeconds(0.35f);
+        }
         if(MoveDirection)
             ExclamationMark[1].SetActive(false);
         else
@@ -34,7 +48,20 @@ public class CrabSpawner : MonoBehaviour {
         else
             Instantiate(CrabPrefab, Spawners[1].transform.position, Quaternion.identity);
         }
+        yield return new WaitForSeconds(6f);
+        if(PlayerPrefs.GetString("Music") == "true")
+            while(MusicSource.volume != 0){
+                MusicSource.volume-=0.1f;
+                yield return new WaitForSeconds(0.35f);
+        }
+        MusicSource.clip = MusicAudioClip[0];
+        MusicSource.Play();
+        if(PlayerPrefs.GetString("Music") == "true")
+        while(MusicSource.volume != 0.5f){
+            MusicSource.volume+=0.1f;
+            yield return new WaitForSeconds(0.35f);
+        }
         StartCoroutine("SpawnCrab");
-
+        
     }
 }

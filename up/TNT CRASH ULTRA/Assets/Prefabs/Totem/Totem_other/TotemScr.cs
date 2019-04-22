@@ -17,6 +17,7 @@ public class TotemScr : MonoBehaviour
     }
     public void DamageTotem()
     {
+        StartCoroutine(Player.Instance.Blick());
         TotemHealth--;
         if(TotemHealth == 1)
         {

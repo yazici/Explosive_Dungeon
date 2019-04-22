@@ -19,7 +19,7 @@ public class LaserEye_Behaviour : MonoBehaviour
     private void FixedUpdate()
     {
         if (DiamondSpawn.CurrentValueOfDiamonds >= 10 && first) { first = false; StartCoroutine(EnemySpawn()); }
-        if (isExplosion && !Player.Instance.Died) { if (LaserEye_Trigger.isPlayerOnTriger() && !Player.Instance.Invisible || LaserEYETRIGGER2.isPlayerOnTriger() && !Player.Instance.Invisible) { Player.Instance.StartCoroutine(Player.Instance.TryToKillPlayer()); } }
+        if (isExplosion && !Player.Instance.Died) { if (LaserEye_Trigger.isPlayerOnTriger() && !Player.Instance.Invisible || LaserEYETRIGGER2.isPlayerOnTriger() && !Player.Instance.Invisible) { Player.Instance.StartCoroutine(Player.Instance.TryToKillPlayer()); Achievements.AchievementSave.DiedByLaserEye++; } }
         if (ClonedEnemy != null && isExplosion == false)
         {
             ClonedEnemy.transform.position = Vector2.MoveTowards(ClonedEnemy.transform.position, TargetPlayer.transform.position, 17.5f / 10 * Time.deltaTime);
@@ -43,6 +43,7 @@ public class LaserEye_Behaviour : MonoBehaviour
             yield return new WaitForSeconds(0.5f);//0,5
             isExplosion = false;
             Destroy(ClonedEnemy);
-            yield return new WaitForSeconds(3.75f); // 3,75
-     }
+            yield return new WaitForSeconds(8f); // 3,75
+            StartCoroutine(EnemySpawn());
+    }
 }

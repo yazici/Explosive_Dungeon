@@ -115,6 +115,8 @@ public class LevelManager : MonoBehaviour {
                         /* Покупка уровня и запуск реверсивного метода */
                         if (Levels_Prices[i] <= PlayerPrefs.GetInt("DiamondsCount")) // Алмазов больше или равно чем цена
                         {
+                            if(i ==2 )
+                                Achievements.AchievementSave.ThirdCaveOpened = true;
                             Debug.Log("Попытка купить уровен успешна.");
                             sv.Buyed_Levels[i] = true;
                             ChangeActiveLevel(i);

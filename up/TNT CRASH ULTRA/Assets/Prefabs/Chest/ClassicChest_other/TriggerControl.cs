@@ -19,6 +19,7 @@ public class TriggerControl : MonoBehaviour {
                         ClassicChest.Instance.StopCoroutine(ClassicChest.DiamondCoroutine);
                     ClassicChest.DiamondCoroutine = DiamondSpawn.Instance.StartCoroutine("SetDoubleDiamonds");
                     Debug.Log("Вы подобрали алмазный сундук!");
+                    Achievements.AchievementSave.DiamondChestsOpened++;
                     break;
                 case Chest.Rainbow:
                     if(ClassicChest.InvisibleCoroutine != null)
@@ -28,17 +29,18 @@ public class TriggerControl : MonoBehaviour {
                     break;
                 case Chest.Glitch:
                     Glitch_Main.Instance.SpawnGlitchTNTs();
+                    Achievements.AchievementSave.GlitchChestsOpened++;
                     Debug.Log("Вы подобрали глитч-сундук!");
                     break;
                 default: // Chest.Classic
                 if(ClassicChest.SpeedBoostCoroutine != null){
                     ClassicChest.Instance.StopCoroutine(ClassicChest.SpeedBoostCoroutine);
-                    print("ebaniy shashlik");
                     }
                     Debug.Log("Вы подобрали классический сундук!");
                     ClassicChest.SpeedBoostCoroutine = Player.Instance.StartCoroutine("OffSpeedboost");
                     break;
             }
+            if(Player.Instance.Invisible){ Achievements.AchievementSave.OpenedChestUnderInvisibility++;}
             if (gameObject.transform.parent.gameObject != null) { Destroy(gameObject.transform.parent.gameObject); }
         }
     }

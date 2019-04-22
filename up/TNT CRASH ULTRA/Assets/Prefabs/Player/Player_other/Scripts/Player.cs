@@ -6,6 +6,8 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using TMPro;
 public class Player : MonoBehaviour {
+    private int ad_dieds;
+
     public SaveRecord svRec = new SaveRecord();
     [HideInInspector]public static Player Instance;
     private Image record_notification;
@@ -15,6 +17,8 @@ public class Player : MonoBehaviour {
     public bool Invisible; // Невидимость
     public GameObject Shake;
     public Effects_Mechanics Effects_Mechanics;
+    public GameObject BlickImage;
+    public float BlickLenght;
     [Header("Move")] // Ходьба
     private int MoveAxis; // Направление движения   
     private bool facingRight;
@@ -39,6 +43,7 @@ public class Player : MonoBehaviour {
     private GameObject[] onLevelButtons;
     private void Start()
     {
+
         switch(SceneManager.GetActiveScene().name){
             case "Level1": LevelID = 0; break;
             case "Level2": LevelID = 1; break;
@@ -47,7 +52,9 @@ public class Player : MonoBehaviour {
         if(!PlayerPrefs.HasKey("SavedRecord")) 
             SaveAllData();
         LoadAllData();
-        Invoke("SetPause", 2.0f);
+        Invoke("SetPause", 1.0f);
+        if(LevelID == 0)
+            Achievements.AchievementSave.FirstCaveVisited = true;
         AudioManager.Instance.InitializeSources();
         record_notification = GameObject.Find("Record_Notifications").GetComponent<Image>();
         unPauseCounter = GameObject.Find("Exit_From_Pause");
@@ -60,6 +67,17 @@ public class Player : MonoBehaviour {
     void SetPause() { pause = true; }
     public IEnumerator TryToKillPlayer(bool fast_die = false)
     {
+        if(LevelID == 0)
+            Social.ReportScore(DiamondSpawn.CurrentValueOfDiamonds, "CgkIyriH1Y4ZEAIQDQ", (bool success) => {print("Reported Score Status: " + success);});
+        else if(LevelID == 1)
+            Social.ReportScore(DiamondSpawn.CurrentValueOfDiamonds, "CgkIyriH1Y4ZEAIQDg", (bool success) => {print("Reported Score Status: " + success);});
+        else if(LevelID == 2)
+            Social.ReportScore(DiamondSpawn.CurrentValueOfDiamonds, "CgkIyriH1Y4ZEAIQDw", (bool success) => {print("Reported Score Status: " + success);});
+        
+        if(LevelID == 2)
+            Achievements.AchievementSave.DiedInThirdCave++;
+        StartCoroutine(Blick());
+        Achievements.AchievementSave.ClearOneGameAchievements();
         PlayerPrefs.SetInt("DiamondsCount", PlayerPrefs.GetInt("DiamondsCount") + DiamondSpawn.CurrentValueOfDiamonds);
         Died = true;
         if (svRec.LevelsRecords[LevelID] <= DiamondSpawn.CurrentValueOfDiamonds)
@@ -88,6 +106,7 @@ public class Player : MonoBehaviour {
         canvases[0].GetComponent<Canvas>().enabled = false;
         canvases[1].GetComponent<Canvas>().enabled = true;
         canvases[2].GetComponent<Canvas>().enabled = false;
+        AdvertisimentShow.Instance.ShowAd();
         SaveAllData();
     }
     public void Pause()
@@ -132,6 +151,12 @@ public class Player : MonoBehaviour {
         }
         Time.timeScale = 1;
     }
+    public IEnumerator Blick()
+    {
+        BlickImage.SetActive(true);
+        yield return new WaitForSeconds(BlickLenght);
+        BlickImage.SetActive(false);
+    }
     public void RespawnPlayer() { StartCoroutine(Respawn()); Time.timeScale = 1; }
     public IEnumerator Respawn()
     {
@@ -175,6 +200,8 @@ public class Player : MonoBehaviour {
         if (onGround && !Died) // Если на земле и игрок жив
         {
             PlayerPhysics.AddForce(transform.up * JumpForce, ForceMode2D.Impulse); // Прыжок
+            Achievements.AchievementSave.JumpedTimesInOneGame++;
+            if(this.Invisible){Achievements.AchievementSave.JumpedTimesInOneGameUnderArmorEffect++;}
         }
     }
     public void Flip(bool right) // Повернуть персонажа

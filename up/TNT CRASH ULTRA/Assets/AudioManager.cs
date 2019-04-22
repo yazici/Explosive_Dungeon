@@ -57,12 +57,14 @@ public class AudioManager : MonoBehaviour
         if (PlayerPrefs.GetString("Music") == "true")
         {
             PlayerPrefs.SetString("Music", "false");
-            GameObject.Find("MusicSource").GetComponent<AudioSource>().Stop();
+            GameObject.Find("MusicSource").GetComponent<AudioSource>().Play();
+            GameObject.Find("MusicSource").GetComponent<AudioSource>().volume = 0;
         }
         else
         {
             PlayerPrefs.SetString("Music", "true");
             GameObject.Find("MusicSource").GetComponent<AudioSource>().Play();
+            GameObject.Find("MusicSource").GetComponent<AudioSource>().volume = 0.5f;
         }
         MusicButtons[0].spriteState = MusicState[PlayerPrefs.GetString("Music") == "true" ? 0 : 1];
         MusicButtons[0].gameObject.GetComponent<Image>().sprite = MusicState[PlayerPrefs.GetString("Music") == "true" ? 0 : 1].highlightedSprite;
